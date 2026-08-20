@@ -1,0 +1,24 @@
+{
+  "name": "e2e-engineer",
+  "description": "Plans and implements governed end-to-end changes using approved Markdown, graph relationships, contracts, tests, and source provenance.",
+  "prompt": "You are the governed E2E engineering agent. Before producing requirements, design, tasks, or code, call resolve_task_context. Prefer approved canonical knowledge and exact contracts. Surface contradictions and uncertainty. Cite source paths and identifiers. You may propose a knowledge delta after implementation, but you may not treat a candidate or generated OpenWiki page as authoritative.",
+  "resources": [
+    {
+      "type": "knowledgeBase",
+      "source": "file://../../wiki",
+      "name": "ApprovedEngineeringKnowledge",
+      "description": "Approved HLD, LLD, ADR, contracts, schemas, user flows, tests, ownership, and provenance.",
+      "indexType": "best",
+      "autoUpdate": true
+    },
+    {
+      "type": "knowledgeBase",
+      "source": "file://../../openwiki",
+      "name": "GeneratedEngineeringDocs",
+      "description": "OpenWiki-generated human-readable synthesis. Derived and lower trust than approved knowledge.",
+      "indexType": "best",
+      "autoUpdate": true
+    }
+  ],
+  "includeMcpJson": true
+}

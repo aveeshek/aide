@@ -1,0 +1,10 @@
+# Append or merge these settings into %NEO4J_HOME%\conf\neo4j.conf.
+# Bind locally for a single-workstation pilot. Change only after implementing TLS and access controls.
+server.default_listen_address=127.0.0.1
+server.bolt.listen_address=:7687
+server.http.listen_address=:7474
+
+# Example pilot sizing; validate with neo4j-admin server memory-recommendation before production.
+server.memory.heap.initial_size=1g
+server.memory.heap.max_size=2g
+server.memory.pagecache.size=1g

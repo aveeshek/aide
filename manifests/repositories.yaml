@@ -1,0 +1,29 @@
+version: 1
+
+repositories:
+  - id: ftgo
+    url: https://github.com/deepmancer/full-stack-fastapi-ftgo.git
+    path: 'C:\tmobile\AIDE-FTGO\ftgo'
+    default_branch: main
+    owner: aide-ftgo-cohort
+
+    sources:
+      documentation:
+        - README.md
+
+      compose:
+        - backend/docker-compose.yaml
+        - backend/infra/**/*.yaml
+
+      code:
+        - backend/gateway/**/*
+        - backend/microservices/**/*
+
+      tests:
+        - backend/**/tests/**/*
+
+      infrastructure:
+        - backend/infra/**/*
+
+      frontend:
+        - ui/**/*

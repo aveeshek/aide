@@ -1,0 +1,7 @@
+# Replace sample teams with your organization teams.
+/wiki/ @example-org/architecture-governance
+/ontology/ @example-org/architecture-governance
+/manifests/ @example-org/platform-engineering
+/openwiki/ @example-org/technical-writing @example-org/architecture-governance
+/.kiro/ @example-org/developer-experience
+/src/knowledge_plane/ @example-org/platform-engineering @example-org/security-engineering

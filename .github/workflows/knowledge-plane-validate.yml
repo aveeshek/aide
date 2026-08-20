@@ -1,0 +1,40 @@
+name: Knowledge Plane Validate
+
+on:
+  pull_request:
+    paths:
+      - "wiki/**"
+      - "ontology/**"
+      - "manifests/**"
+      - "src/knowledge_plane/**"
+      - "pyproject.toml"
+      - ".github/workflows/knowledge-plane-validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+      - name: Install dependencies
+        run: uv sync --extra dev
+      - name: Validate canonical knowledge
+        run: uv run knowledge-plane-validate
+        env:
+          KNOWLEDGE_ROOT: ${{ github.workspace }}
+      - name: Lint Python
+        run: uv run ruff check src tests
+      - name: Run tests
+        run: uv run pytest -q

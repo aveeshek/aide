@@ -1,0 +1,28 @@
+id: SERVICE-LOOP-V1
+kind: service
+goal: Complete one service-local spec without expanding into another repository.
+allowed_repositories: [target-service]
+allowed_paths: [src/**, tests/**, contracts/**, migrations/**, .kiro/specs/**]
+forbidden_actions:
+  - push_to_protected_branch
+  - modify_another_team_repository
+  - publish_breaking_contract_without_approval
+  - bypass_quality_gate
+  - update_approved_wiki_directly
+escalation_conditions:
+  - the_change_requires_another_service
+  - a_breaking_contract_change_is_detected
+  - rollback_or_migration_strategy_is_missing
+  - loop_budget_is_exhausted
+verification:
+  - id: service-build
+    description: Compile the complete service.
+  - id: component-tests
+    description: Run service component tests.
+  - id: security-scan
+    description: Run configured source and dependency security checks.
+budgets:
+  max_iterations: 4
+  max_minutes: 240
+  max_scope_expansions: 0
+terminal_states: [PASS, ESCALATE, FAIL]

@@ -1,0 +1,39 @@
+name: Knowledge Plane Publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wiki/**"
+      - "ontology/**"
+      - "manifests/**"
+      - "operations/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ingest:
+    # Use a trusted runner that can reach Neo4j and your internal LLM gateway.
+    runs-on: [self-hosted, knowledge-plane]
+    environment: knowledge-plane-production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14" # latest runtime in the currently validated CI matrix
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run knowledge-plane-validate
+      - run: uv run knowledge-plane-ingest --graphiti auto
+        env:
+          KNOWLEDGE_ROOT: ${{ github.workspace }}
+          NEO4J_URI: ${{ secrets.NEO4J_URI }}
+          NEO4J_USER: ${{ secrets.NEO4J_USER }}
+          NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
+          NEO4J_DATABASE: ${{ vars.NEO4J_DATABASE }}
+          ENABLE_GRAPHITI: ${{ vars.ENABLE_GRAPHITI }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
+          GRAPH_GROUP_ID: ${{ vars.GRAPH_GROUP_ID }}

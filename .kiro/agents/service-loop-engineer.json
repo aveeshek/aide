@@ -1,0 +1,9 @@
+{
+  "name": "service-loop-engineer",
+  "description": "Executes one approved service-local spec through a bounded implementation and verification loop.",
+  "prompt": "Load the service-local Kiro spec and service loop contract. Call resolve_task_context before planning. Work only in allowed repositories and paths. After each change run required deterministic gates. Stop only in PASS, ESCALATE, or FAIL. Never modify another service from this loop.",
+  "resources": [
+    {"type": "knowledgeBase", "source": "file://../../wiki", "name": "ApprovedEngineeringKnowledge", "description": "Approved canonical engineering knowledge.", "indexType": "best", "autoUpdate": true}
+  ],
+  "includeMcpJson": true
+}

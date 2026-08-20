@@ -1,0 +1,15 @@
+[project]
+site_name = "BOS AIDE Knowledge-Centric Loop Engineering"
+site_description = "Approved engineering knowledge, OpenWiki documentation, architecture, and operating evidence"
+docs_dir = ".site-docs"
+site_dir = "site"
+dev_addr = "127.0.0.1:8001"
+
+[project.theme]
+features = [
+  "navigation.sections",
+  "navigation.top",
+  "navigation.footer",
+  "search.suggest",
+  "content.code.copy",
+]

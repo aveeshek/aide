@@ -1,0 +1,36 @@
+version: 1
+entity_types:
+  - System
+  - Domain
+  - Service
+  - Component
+  - Repository
+  - Module
+  - Symbol
+  - API
+  - Endpoint
+  - Event
+  - Topic
+  - Message
+  - Schema
+  - Database
+  - Table
+  - Column
+  - Migration
+  - UserFlow
+  - FlowStep
+  - Requirement
+  - AcceptanceCriterion
+  - ADR
+  - Constraint
+  - NFR
+  - Policy
+  - Owner
+  - Team
+  - Test
+  - TestSuite
+  - QualityGate
+  - Incident
+  - Runbook
+  - Deployment
+  - Index

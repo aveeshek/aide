@@ -1,0 +1,44 @@
+version: 1
+relationship_types:
+  - type: OWNS
+    description: A team or service owns an entity.
+  - type: CONTAINS
+    description: A parent contains a child entity.
+  - type: IMPLEMENTS
+    description: Code or a component implements a requirement or contract.
+  - type: DEPENDS_ON
+    description: An entity has a design-time or runtime dependency.
+  - type: CALLS
+    description: A component or service makes a synchronous call.
+  - type: EXPOSES
+    description: A service exposes an API or endpoint.
+  - type: PUBLISHES
+    description: A service publishes an event or message.
+  - type: CONSUMES
+    description: A service consumes an event or message.
+  - type: USES_SCHEMA
+    description: An interface or data object uses a schema.
+  - type: READS
+    description: A service, module, or flow reads a data asset.
+  - type: WRITES
+    description: A service, module, or flow writes a data asset.
+  - type: PARTICIPATES_IN
+    description: An entity participates in a user flow.
+  - type: PRECEDES
+    description: A flow step occurs before another step.
+  - type: GOVERNED_BY
+    description: An entity is governed by an ADR, policy, constraint, or NFR.
+  - type: VALIDATED_BY
+    description: A requirement, flow, API, or component is validated by a test or gate.
+  - type: DEPLOYED_AS
+    description: A service or component is deployed as a runtime resource.
+  - type: CHANGED_BY
+    description: An entity was changed by a pull request, commit, or deployment.
+  - type: OBSERVED_IN
+    description: A behavior or relationship was observed in telemetry or an incident.
+  - type: SUPERSEDES
+    description: A newer entity or decision supersedes an older one.
+  - type: CONTRADICTS
+    description: Evidence conflicts with another current claim.
+  - type: DERIVED_FROM
+    description: A derived artifact came from an authoritative source.

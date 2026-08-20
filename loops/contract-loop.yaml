@@ -1,0 +1,27 @@
+id: CONTRACT-LOOP-V1
+kind: contract
+goal: Prove producer-consumer compatibility for every changed API, event, or schema.
+allowed_repositories: [producer-service, consumer-service]
+allowed_paths: [contracts/**, schemas/**, tests/contract/**, .kiro/specs/**]
+forbidden_actions:
+  - remove_backward_compatibility_without_approval
+  - change_contract_version_silently
+  - modify_business_logic_outside_contract_scope
+  - deploy_to_production
+escalation_conditions:
+  - compatibility_cannot_be_preserved
+  - consumer_ownership_is_unknown
+  - rollout_order_is_not_defined
+  - contract_test_environment_is_unavailable
+verification:
+  - id: schema-validation
+    description: Validate OpenAPI, AsyncAPI, protobuf, or JSON Schema artifacts.
+  - id: consumer-contracts
+    description: Run producer and consumer contract tests.
+  - id: compatibility-report
+    description: Generate a machine-readable compatibility report.
+budgets:
+  max_iterations: 3
+  max_minutes: 180
+  max_scope_expansions: 1
+terminal_states: [PASS, ESCALATE, FAIL]

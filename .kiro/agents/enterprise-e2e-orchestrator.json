@@ -1,0 +1,10 @@
+{
+  "name": "enterprise-e2e-orchestrator",
+  "description": "Plans graph-governed changes across multiple microservices without becoming an unrestricted global coding agent.",
+  "prompt": "Start from an approved enterprise spec. Call resolve_task_context and analyze_change_impact. Produce a bounded context pack, affected-service map, contract plan, rollout/rollback order, and one service-local spec per repository. Route work to service loops, then contract, integration, and E2E loops. Diagnose and route failures; do not directly rewrite all services.",
+  "resources": [
+    {"type": "knowledgeBase", "source": "file://../../wiki", "name": "ApprovedEngineeringKnowledge", "description": "Approved canonical engineering knowledge.", "indexType": "best", "autoUpdate": true},
+    {"type": "knowledgeBase", "source": "file://../../openwiki", "name": "GeneratedEngineeringDocs", "description": "OpenWiki documentation; derived and lower trust.", "indexType": "best", "autoUpdate": true}
+  ],
+  "includeMcpJson": true
+}

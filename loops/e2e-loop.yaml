@@ -1,0 +1,27 @@
+id: E2E-LOOP-V1
+kind: e2e
+goal: Prove the enterprise business flow after all service and contract loops pass.
+allowed_repositories: [e2e-test-repository, affected-service-repositories]
+allowed_paths: [tests/e2e/**, test-data/**, generated/context-packs/**, enterprise-specs/**]
+forbidden_actions:
+  - directly_rewrite_all_services
+  - bypass_failed_service_or_contract_gate
+  - treat_environment_failure_as_product_success
+  - update_approved_wiki_directly
+escalation_conditions:
+  - failure_owner_cannot_be_resolved_from_graph
+  - environment_or_test_data_is_invalid
+  - business_acceptance_criteria_conflict
+  - loop_budget_is_exhausted
+verification:
+  - id: e2e-happy-path
+    description: Execute the primary business flow.
+  - id: e2e-failure-paths
+    description: Execute required retry, compensation, and negative scenarios.
+  - id: nfr-checks
+    description: Validate linked performance, security, reliability, and audit requirements.
+budgets:
+  max_iterations: 3
+  max_minutes: 360
+  max_scope_expansions: 1
+terminal_states: [PASS, ESCALATE, FAIL]

@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "id": "api.order.v2",
+      "kind": "API",
+      "title": "Order API v2",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/apis/order-api-v2.md",
+      "relations": [
+        {
+          "type": "DERIVED_FROM",
+          "target": "service.order"
+        },
+        {
+          "type": "PARTICIPATES_IN",
+          "target": "flow.place-order"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "order-service",
+          "commit": "0123456789abcdef",
+          "path": "contracts/openapi/order-api-v2.yaml",
+          "pointer": "#/paths/~1orders/post",
+          "evidence_type": "contracted"
+        }
+      ],
+      "source_hash": "c463393d3d0cf1bedf4fef660bfd596c073d6097bcda634f9bb43d7ac2937745",
+      "owner": "team-commerce",
+      "last_verified_at": "2026-07-22",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "knowledge.home",
+      "kind": "Index",
+      "title": "Approved Engineering Knowledge",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/index.md",
+      "relations": [
+        {
+          "type": "CONTAINS",
+          "target": "service.order"
+        },
+        {
+          "type": "CONTAINS",
+          "target": "api.order.v2"
+        },
+        {
+          "type": "CONTAINS",
+          "target": "flow.place-order"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "engineering-knowledge-plane",
+          "commit": "starter-kit",
+          "path": "wiki/index.md",
+          "evidence_type": "declared"
+        }
+      ],
+      "source_hash": "4908726a4916482b5d5b443d187b3165f86833970543f4abd5d2703c59af08b8",
+      "owner": "architecture-governance",
+      "last_verified_at": "2026-07-22",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "service.order",
+      "kind": "Service",
+      "title": "Order Service",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/services/order-service.md",
+      "relations": [
+        {
+          "type": "EXPOSES",
+          "target": "api.order.v2"
+        },
+        {
+          "type": "PARTICIPATES_IN",
+          "target": "flow.place-order"
+        },
+        {
+          "type": "DEPENDS_ON",
+          "target": "service.payment"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "order-service",
+          "commit": "0123456789abcdef",
+          "path": "docs/hld/order-service.md",
+          "lines": "41-96",
+          "evidence_type": "declared"
+        },
+        {
+          "repository": "order-service",
+          "commit": "0123456789abcdef",
+          "path": "src/main/java/com/example/order/OrderController.java",
+          "symbol": "com.example.order.OrderController",
+          "evidence_type": "implemented"
+        }
+      ],
+      "source_hash": "cd15af4c9ea8b310d6ee774ee1e51ea99d4ddaba9f9c5ff82ffccfe6a1094bd9",
+      "owner": "team-commerce",
+      "last_verified_at": "2026-07-22",
+      "valid_from": "2026-01-15",
+      "valid_to": null
+    },
+    {
+      "id": "service.payment",
+      "kind": "Service",
+      "title": "Payment Service",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/services/payment-service.md",
+      "relations": [
+        {
+          "type": "PARTICIPATES_IN",
+          "target": "flow.place-order"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "payment-service",
+          "commit": "fedcba9876543210",
+          "path": "docs/hld/payment-service.md",
+          "evidence_type": "declared"
+        }
+      ],
+      "source_hash": "191dbebe8c22403f021e6b6a992ff5480b47e147fd59b9a1478fa97f7c39483f",
+      "owner": "team-payments",
+      "last_verified_at": "2026-07-22",
+      "valid_from": "2026-01-15",
+      "valid_to": null
+    },
+    {
+      "id": "test.place-order.e2e",
+      "kind": "Test",
+      "title": "Place Order E2E test",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/tests/place-order-e2e.md",
+      "relations": [
+        {
+          "type": "VALIDATED_BY",
+          "target": "flow.place-order"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "order-e2e-tests",
+          "commit": "aabbccddeeff0011",
+          "path": "tests/place_order_test.py",
+          "symbol": "test_place_order_happy_path",
+          "evidence_type": "implemented"
+        }
+      ],
+      "source_hash": "6995e78ad7e4c19ac0dbf8c3ead5c418c5abd541b7261773222561af647a981c",
+      "owner": "team-commerce",
+      "last_verified_at": "2026-07-22",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "step.place-order.authorize-payment",
+      "kind": "FlowStep",
+      "title": "Authorize payment",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/user-flows/authorize-payment.md",
+      "relations": [
+        {
+          "type": "PRECEDES",
+          "target": "step.place-order.confirm"
+        },
+        {
+          "type": "IMPLEMENTS",
+          "target": "service.payment"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "commerce-product-docs",
+          "commit": 1122334455667788,
+          "path": "user-flows/place-order.md",
+          "evidence_type": "declared"
+        }
+      ],
+      "source_hash": "9392e555c08d85283d11067a986ae6b751fba1c5e47771c2b5aa344bd60eb55e",
+      "owner": "team-payments",
+      "last_verified_at": "2026-07-22",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "step.place-order.confirm",
+      "kind": "FlowStep",
+      "title": "Confirm order",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/user-flows/confirm.md",
+      "relations": [
+        {
+          "type": "IMPLEMENTS",
+          "target": "service.order"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "commerce-product-docs",
+          "commit": 1122334455667788,
+          "path": "user-flows/place-order.md",
+          "evidence_type": "declared"
+        }
+      ],
+      "source_hash": "1ff8c29549f88971ae23603672a39bbd31006d336726d92092ffe927c0365093",
+      "owner": "team-commerce",
+      "last_verified_at": "2026-07-22",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "flow.place-order",
+      "kind": "UserFlow",
+      "title": "Place Order",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/user-flows/place-order.md",
+      "relations": [
+        {
+          "type": "CONTAINS",
+          "target": "step.place-order.validate"
+        },
+        {
+          "type": "CONTAINS",
+          "target": "step.place-order.authorize-payment"
+        },
+        {
+          "type": "CONTAINS",
+          "target": "step.place-order.confirm"
+        },
+        {
+          "type": "VALIDATED_BY",
+          "target": "test.place-order.e2e"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "commerce-product-docs",
+          "commit": 1122334455667788,
+          "path": "user-flows/place-order.md",
+          "evidence_type": "declared"
+        }
+      ],
+      "source_hash": "5852b1c847658b470de579e3ad8c6ecd07a818d15dfbea06784b10c0b3ce8666",
+      "owner": "product-commerce",
+      "last_verified_at": "2026-07-22",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "id": "step.place-order.validate",
+      "kind": "FlowStep",
+      "title": "Validate order request",
+      "status": "approved",
+      "review_status": "approved",
+      "path": "wiki/user-flows/steps.md",
+      "relations": [
+        {
+          "type": "PRECEDES",
+          "target": "step.place-order.authorize-payment"
+        }
+      ],
+      "source_refs": [
+        {
+          "repository": "commerce-product-docs",
+          "commit": 1122334455667788,
+          "path": "user-flows/place-order.md",
+          "evidence_type": "declared"
+        }
+      ],
+      "source_hash": "4902d7bfaadbca8ec3b9d6865a46b4ff45aa04a2db0495b1d86086f038210754",
+      "owner": "team-commerce",
+      "last_verified_at": "2026-07-22",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ]
+}

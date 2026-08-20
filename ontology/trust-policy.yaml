@@ -1,0 +1,39 @@
+version: 1
+trust_order:
+  - rank: 1
+    name: authoritative_delivery_evidence
+    examples: [code, issue_tracker, ci, deployments, contracts, schemas]
+  - rank: 2
+    name: approved_architecture
+    examples: [hld, lld, adr, nfr, policy, runbook]
+  - rank: 3
+    name: canonical_wiki
+    examples: [approved_markdown]
+  - rank: 4
+    name: generated_synthesis
+    examples: [openwiki]
+  - rank: 5
+    name: episodic_memory
+    examples: [graphiti_episode, optional_mem0]
+  - rank: 6
+    name: model_prior
+    examples: [general_llm_knowledge]
+
+publication:
+  canonical_write_requires:
+    - pull_request
+    - schema_validation
+    - source_reference_validation
+    - codeowner_review
+    - protected_branch_merge
+  agents_may:
+    - read_approved_knowledge
+    - search_graph
+    - generate_context_pack
+    - propose_candidate_delta
+  agents_must_not:
+    - approve_candidate_delta
+    - publish_to_protected_branch
+    - clear_graph
+    - overwrite_contracts
+    - treat_episodic_memory_as_authority

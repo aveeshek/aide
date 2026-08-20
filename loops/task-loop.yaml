@@ -1,0 +1,28 @@
+id: TASK-LOOP-V1
+kind: task
+goal: Implement one approved Kiro task and prove its linked acceptance criteria.
+allowed_repositories: [target-service]
+allowed_paths: [src/**, tests/**, .kiro/specs/**]
+forbidden_actions:
+  - push_to_protected_branch
+  - modify_public_contract_without_contract_plan
+  - change_database_schema_without_migration
+  - update_approved_wiki_directly
+  - deploy_to_production
+escalation_conditions:
+  - requirement_or_acceptance_criterion_is_ambiguous
+  - a_new_service_dependency_is_discovered
+  - a_public_contract_change_is_required
+  - a_security_or_data_classification_decision_is_required
+verification:
+  - id: compile
+    description: Build or compile the affected module.
+  - id: unit-tests
+    description: Run tests linked to the current task.
+  - id: static-analysis
+    description: Run configured lint and static-analysis checks.
+budgets:
+  max_iterations: 3
+  max_minutes: 90
+  max_scope_expansions: 0
+terminal_states: [PASS, ESCALATE, FAIL]
