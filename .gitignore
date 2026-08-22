@@ -21,3 +21,4 @@ logs/
 windows/.installed-neo4j-home.txt
 
 generated/loop-runs/
+*.code-workspace
