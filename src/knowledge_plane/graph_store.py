@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import logging
+from collections.abc import Iterable
+from dataclasses import dataclass
 from datetime import UTC, datetime
 from typing import Any
 
@@ -11,6 +13,75 @@ from neo4j.exceptions import Neo4jError
 from .models import KnowledgePage
 
 logger = logging.getLogger(__name__)
+
+# Deletion previews are truncated so an accidental full-graph wipe produces a readable
+# error instead of thousands of ids.
+_DELETION_PREVIEW_LIMIT = 10
+
+
+@dataclass(frozen=True, slots=True)
+class SyncPlan:
+    """Deterministic diff between the live graph and the incoming canonical set.
+
+    ``retained`` holds ids present on both sides; those nodes are re-merged (updated)
+    in place rather than recreated, so retained and updated are the same set here.
+    All tuples are sorted so the same inputs always produce the same reported plan.
+    """
+
+    creates: tuple[str, ...]
+    retained: tuple[str, ...]
+    deletions: tuple[str, ...]
+
+    @property
+    def is_destructive(self) -> bool:
+        return bool(self.deletions)
+
+    def as_dict(self) -> dict[str, Any]:
+        return {
+            "creates": list(self.creates),
+            "retained": list(self.retained),
+            "deletions": list(self.deletions),
+            "create_count": len(self.creates),
+            "retained_count": len(self.retained),
+            "deletion_count": len(self.deletions),
+        }
+
+    def ensure_safe(self, allow_delete: bool) -> None:
+        """Raise unless the plan is non-destructive or deletion was authorized."""
+        if self.deletions and not allow_delete:
+            raise DestructiveSyncError(self)
+
+
+class DestructiveSyncError(RuntimeError):
+    """Raised when a sync would remove KP_Entity nodes without explicit authorization."""
+
+    def __init__(self, plan: SyncPlan) -> None:
+        self.plan = plan
+        preview = ", ".join(plan.deletions[:_DELETION_PREVIEW_LIMIT])
+        hidden = len(plan.deletions) - _DELETION_PREVIEW_LIMIT
+        if hidden > 0:
+            preview = f"{preview}, ... (+{hidden} more)"
+        super().__init__(
+            f"Refusing to synchronize: {len(plan.deletions)} existing KP_Entity node(s) "
+            f"are not backed by the incoming canonical set and would be deleted "
+            f"[{preview}]. The graph was left unchanged. Re-run with --allow-delete to "
+            f"authorize intentional stale-node removal."
+        )
+
+
+def build_sync_plan(existing_ids: Iterable[str], canonical_ids: Iterable[str]) -> SyncPlan:
+    """Compare live KP_Entity ids with incoming canonical ids.
+
+    Pure and side-effect free: this is the decision input for the deletion guard and is
+    computed before any graph mutation so an unsafe plan can abort without touching Neo4j.
+    """
+    existing = set(existing_ids)
+    canonical = set(canonical_ids)
+    return SyncPlan(
+        creates=tuple(sorted(canonical - existing)),
+        retained=tuple(sorted(canonical & existing)),
+        deletions=tuple(sorted(existing - canonical)),
+    )
 
 
 def optional_str(value: Any) -> str | None:
@@ -52,8 +123,20 @@ def json_safe(value: Any) -> Any:
 class Neo4jKnowledgeGraph:
     """Deterministic typed graph rebuilt from approved canonical Markdown."""
 
-    def __init__(self, uri: str, user: str, password: str, database: str = "neo4j") -> None:
-        self._driver: AsyncDriver = AsyncGraphDatabase.driver(uri, auth=(user, password))
+    def __init__(
+        self,
+        uri: str,
+        user: str,
+        password: str,
+        database: str = "neo4j",
+        *,
+        driver: AsyncDriver | None = None,
+    ) -> None:
+        # ``driver`` is an injection seam: it lets deterministic tests observe the exact
+        # order of statements the sync issues without a live Neo4j instance.
+        if driver is None:
+            driver = AsyncGraphDatabase.driver(uri, auth=(user, password))
+        self._driver: AsyncDriver = driver
         self._database = database
 
     async def close(self) -> None:
@@ -74,10 +157,47 @@ class Neo4jKnowledgeGraph:
             for statement in statements:
                 await session.run(statement)
 
-    async def sync_pages(self, pages: list[KnowledgePage]) -> dict[str, int]:
+    async def get_entity_ids(self) -> set[str]:
+        """Read the ids of every KP_Entity currently in the graph. Read-only."""
+        async with self._driver.session(database=self._database) as session:
+            result = await session.run("MATCH (n:KP_Entity) RETURN n.id AS id")
+            return {record["id"] async for record in result}
+
+    async def plan_sync(self, pages: list[KnowledgePage]) -> SyncPlan:
+        """Diff the live graph against ``pages`` without modifying anything."""
+        return build_sync_plan(await self.get_entity_ids(), {page.id for page in pages})
+
+    async def sync_pages(
+        self,
+        pages: list[KnowledgePage],
+        *,
+        allow_delete: bool = False,
+        dry_run: bool = False,
+    ) -> dict[str, Any]:
+        """Rebuild the deterministic graph from ``pages`` behind a deletion guard.
+
+        The plan is computed and checked before ``setup()`` and before any MERGE, so a
+        rejected sync (including an empty canonical set against a populated graph) leaves
+        the graph untouched. ``dry_run`` reports the plan and issues no statement that
+        modifies Neo4j.
+        """
+        plan = await self.plan_sync(pages)
+        plan.ensure_safe(allow_delete)
+
+        result: dict[str, Any] = {
+            "entities": len(pages),
+            "relationships": sum(len(page.relations) for page in pages),
+            "entities_deleted": 0,
+            "allow_delete": allow_delete,
+            "dry_run": dry_run,
+            "plan": plan.as_dict(),
+        }
+        if dry_run:
+            result["applied"] = False
+            return result
+
         await self.setup()
         sync_id = datetime.now(UTC).isoformat()
-        entity_ids = {page.id for page in pages}
 
         async with self._driver.session(database=self._database) as session:
             for page in pages:
@@ -129,13 +249,22 @@ class Neo4jKnowledgeGraph:
                         evidence_json=json.dumps(relation.evidence, default=str),
                     )
 
-            await session.run(
-                "MATCH (n:KP_Entity) WHERE NOT (n.id IN $entity_ids) DETACH DELETE n",
-                entity_ids=sorted(entity_ids),
-            )
+            if plan.deletions:
+                # Delete exactly the authorized set instead of "everything not in the
+                # canonical set", so the mutation can never exceed the reported plan.
+                logger.warning(
+                    "Deleting %d stale KP_Entity node(s) authorized by --allow-delete: %s",
+                    len(plan.deletions),
+                    ", ".join(plan.deletions[:_DELETION_PREVIEW_LIMIT]),
+                )
+                await session.run(
+                    "MATCH (n:KP_Entity) WHERE n.id IN $deletions DETACH DELETE n",
+                    deletions=list(plan.deletions),
+                )
 
-        relation_count = sum(len(page.relations) for page in pages)
-        return {"entities": len(pages), "relationships": relation_count}
+        result["entities_deleted"] = len(plan.deletions)
+        result["applied"] = True
+        return result
 
     async def get_graphiti_hashes(self) -> dict[str, str]:
         async with self._driver.session(database=self._database) as session:

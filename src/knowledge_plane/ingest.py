@@ -6,7 +6,7 @@ import json
 import logging
 from pathlib import Path
 
-from .graph_store import Neo4jKnowledgeGraph
+from .graph_store import DestructiveSyncError, Neo4jKnowledgeGraph
 from .graphiti_store import GraphitiContextGraph
 from .markdown_loader import load_pages, validate_pages
 from .ontology import load_entity_types, load_relationship_types
@@ -24,7 +24,17 @@ def _write_index(pages: list, output: Path) -> None:
     output.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
 
 
-async def ingest(include_graphiti: bool | None = None) -> dict:
+async def ingest(
+    include_graphiti: bool | None = None,
+    *,
+    allow_delete: bool = False,
+    dry_run: bool = False,
+) -> dict:
+    """Validate canonical Markdown and synchronize it into the graph.
+
+    Raises ``DestructiveSyncError`` before any graph mutation when the incoming canonical
+    set would delete existing KP_Entity nodes and ``allow_delete`` is False.
+    """
     pages = load_pages(settings.canonical_path, settings.knowledge_root)
     entity_types = load_entity_types(settings.knowledge_root / "ontology/entity-types.yaml")
     relation_types = load_relationship_types(
@@ -34,7 +44,9 @@ async def ingest(include_graphiti: bool | None = None) -> dict:
     if errors:
         raise ValueError("Knowledge validation failed:\n- " + "\n- ".join(errors))
 
-    _write_index(pages, settings.generated_path / "knowledge_index.json")
+    # A dry run reports only; it leaves the generated index alongside Neo4j untouched.
+    if not dry_run:
+        _write_index(pages, settings.generated_path / "knowledge_index.json")
 
     deterministic = Neo4jKnowledgeGraph(
         settings.neo4j_uri,
@@ -45,7 +57,9 @@ async def ingest(include_graphiti: bool | None = None) -> dict:
     try:
         await deterministic.verify()
         prior_graphiti_hashes = await deterministic.get_graphiti_hashes()
-        deterministic_counts = await deterministic.sync_pages(pages)
+        deterministic_counts = await deterministic.sync_pages(
+            pages, allow_delete=allow_delete, dry_run=dry_run
+        )
 
         requested = settings.enable_graphiti if include_graphiti is None else include_graphiti
         graphiti_count = 0
@@ -53,7 +67,11 @@ async def ingest(include_graphiti: bool | None = None) -> dict:
         pending_graphiti_pages = [
             page for page in pages if prior_graphiti_hashes.get(page.id) != page.source_hash
         ]
-        if requested:
+        if requested and dry_run:
+            # Graphiti episodes are written into the same Neo4j instance, so a dry run must
+            # skip them. The Graphiti-off path above is left exactly as-is.
+            graphiti_status = "skipped: dry-run"
+        elif requested:
             if not GraphitiContextGraph.is_configured():
                 graphiti_status = "skipped: OPENAI_API_KEY is not configured"
                 logger.warning(graphiti_status)
@@ -77,6 +95,8 @@ async def ingest(include_graphiti: bool | None = None) -> dict:
 
     return {
         "status": "ok",
+        "dry_run": dry_run,
+        "allow_delete": allow_delete,
         "canonical_pages": len(pages),
         "deterministic_graph": deterministic_counts,
         "graphiti": {
@@ -87,7 +107,7 @@ async def ingest(include_graphiti: bool | None = None) -> dict:
     }
 
 
-def main() -> None:
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Ingest approved Markdown into the knowledge plane"
     )
@@ -97,14 +117,43 @@ def main() -> None:
         default="auto",
         help="Override ENABLE_GRAPHITI for this run",
     )
-    args = parser.parse_args()
+    parser.add_argument(
+        "--allow-delete",
+        action="store_true",
+        help=(
+            "Authorize removal of stale KP_Entity nodes that the incoming canonical set "
+            "no longer contains. Without this flag a sync that would delete nodes aborts "
+            "before any graph mutation."
+        ),
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Report the synchronization plan without modifying Neo4j",
+    )
+    return parser
+
+
+def main() -> None:
+    args = build_parser().parse_args()
     include_graphiti = {"auto": None, "on": True, "off": False}[args.graphiti]
 
     logging.basicConfig(
         level=getattr(logging, settings.log_level.upper(), logging.INFO),
         format="%(asctime)s %(levelname)s %(name)s - %(message)s",
     )
-    result = asyncio.run(ingest(include_graphiti))
+    try:
+        result = asyncio.run(
+            ingest(include_graphiti, allow_delete=args.allow_delete, dry_run=args.dry_run)
+        )
+    except DestructiveSyncError as exc:
+        print(
+            json.dumps(
+                {"status": "blocked", "reason": str(exc), "plan": exc.plan.as_dict()},
+                indent=2,
+            )
+        )
+        raise SystemExit(2) from exc
     print(json.dumps(result, indent=2))
 
 
