@@ -5,6 +5,7 @@ repositories:
     url: https://github.com/deepmancer/full-stack-fastapi-ftgo.git
     path: 'C:\tmobile\AIDE-FTGO\ftgo'
     default_branch: main
+    expected_commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
     owner: aide-ftgo-cohort
 
     sources:

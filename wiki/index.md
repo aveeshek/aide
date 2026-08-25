@@ -1,34 +1,51 @@
 ---
-id: knowledge.home
+id: knowledge.ftgo
 kind: Index
-type: Index
-title: Approved Engineering Knowledge
+title: FTGO Engineering Knowledge
 status: approved
 review_status: approved
-owner: architecture-governance
-last_verified_at: 2026-07-22
+owner: aide-ftgo-cohort
 source_refs:
-  - repository: engineering-knowledge-plane
-    commit: starter-kit
-    path: wiki/index.md
-    evidence_type: declared
+  - repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/docker-compose.yaml
+    evidence_type: implemented
 relations:
   - type: CONTAINS
-    target: service.order
+    target: service.ftgo.gateway
   - type: CONTAINS
-    target: api.order.v2
+    target: service.ftgo.user
   - type: CONTAINS
-    target: flow.place-order
+    target: service.ftgo.restaurant
+  - type: CONTAINS
+    target: service.ftgo.location
+  - type: CONTAINS
+    target: service.ftgo.order
+  - type: CONTAINS
+    target: service.ftgo.feedback
+last_verified_at: 2026-08-24
 ---
 
-# Approved Engineering Knowledge
+# FTGO Engineering Knowledge
 
-This directory contains the canonical, reviewable knowledge used by Kiro and the knowledge-plane MCP server.
+Canonical engineering knowledge for the FTGO reference application.
 
-## Entry points
+This baseline contains deterministic runtime topology extracted from Docker Compose evidence at commit `52b1fd1b5d808e32b7925e890f560445a8460e7a`.
 
-- [Order Service](services/order-service.md)
-- [Order API v2](apis/order-api-v2.md)
-- [Place Order user flow](user-flows/place-order.md)
+## Current knowledge scope
 
-Generated documentation is published separately under `openwiki/` and is not authoritative.
+The current Graph Engineering baseline covers:
+
+- application services
+- PostgreSQL and MongoDB instances
+- Redis components
+- RabbitMQ
+- explicit runtime dependencies derived from Compose configuration
+
+API endpoints, message producers and consumers, schemas, database models, tests, and business flows will be added through subsequent deterministic extraction passes.
+
+## Governance
+
+The pages referenced by this index were generated as candidates from source evidence and promoted to canonical knowledge after review.
+
+Canonical Markdown is authoritative. Neo4j is a rebuildable projection of this approved knowledge.

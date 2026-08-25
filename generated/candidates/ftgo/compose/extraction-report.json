@@ -1,0 +1,585 @@
+{
+  "version": 1,
+  "extractor": "compose",
+  "repository": "ftgo",
+  "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+  "evidence_type": "implemented",
+  "source_files": [
+    "backend/docker-compose.yaml",
+    "backend/infra/admin/docker-compose.yaml",
+    "backend/infra/docker-compose.yaml",
+    "backend/infra/mongo/docker-compose.yaml",
+    "backend/infra/monitoring/docker-compose.yaml",
+    "backend/infra/monitoring/grafana/datasource.yaml",
+    "backend/infra/monitoring/prometheus/prometheus.yaml",
+    "backend/infra/postgres/docker-compose.yaml",
+    "backend/infra/rabbitmq/docker-compose.yaml",
+    "backend/infra/redis/docker-compose.yaml"
+  ],
+  "counts": {
+    "source_files": 10,
+    "application_services": 6,
+    "infrastructure_entities": 13,
+    "relationships": 16,
+    "unresolved_dependencies": 1,
+    "warnings": 10
+  },
+  "application_services": [
+    {
+      "id": "service.ftgo.feedback",
+      "kind": "Service",
+      "role": "application",
+      "compose_service": "feedback_service",
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/feedback_service",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "service.ftgo.gateway",
+      "kind": "Service",
+      "role": "application",
+      "compose_service": "gateway_service",
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/gateway_service",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "service.ftgo.location",
+      "kind": "Service",
+      "role": "application",
+      "compose_service": "location_service",
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/location_service",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "service.ftgo.order",
+      "kind": "Service",
+      "role": "application",
+      "compose_service": "order_service",
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/order_service",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "service.ftgo.restaurant",
+      "kind": "Service",
+      "role": "application",
+      "compose_service": "restaurant_service",
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/restaurant_service",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "service.ftgo.user",
+      "kind": "Service",
+      "role": "application",
+      "compose_service": "user_service",
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/user_service",
+        "evidence_type": "implemented"
+      }
+    }
+  ],
+  "infrastructure_entities": [
+    {
+      "id": "component.ftgo.gateway-redis",
+      "kind": "Component",
+      "role": "infrastructure",
+      "compose_service": "gateway_redis",
+      "engine": "redis",
+      "aliases": [
+        "gateway_redis"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/redis/docker-compose.yaml",
+        "pointer": "/services/gateway_redis",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "component.ftgo.location-redis",
+      "kind": "Component",
+      "role": "infrastructure",
+      "compose_service": "location_redis",
+      "engine": "redis",
+      "aliases": [
+        "location_redis"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/redis/docker-compose.yaml",
+        "pointer": "/services/location_redis",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "component.ftgo.order-redis",
+      "kind": "Component",
+      "role": "infrastructure",
+      "compose_service": "order_redis",
+      "engine": "redis",
+      "aliases": [
+        "order_redis"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/redis/docker-compose.yaml",
+        "pointer": "/services/order_redis",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "component.ftgo.rabbitmq",
+      "kind": "Component",
+      "role": "infrastructure",
+      "compose_service": "message_broker",
+      "engine": "rabbitmq",
+      "aliases": [
+        "message_broker",
+        "rabbitmq"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/rabbitmq/docker-compose.yaml",
+        "pointer": "/services/message_broker",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "component.ftgo.restaurant-redis",
+      "kind": "Component",
+      "role": "infrastructure",
+      "compose_service": "restaurant_redis",
+      "engine": "redis",
+      "aliases": [
+        "restaurant_redis"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/redis/docker-compose.yaml",
+        "pointer": "/services/restaurant_redis",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "component.ftgo.user-redis",
+      "kind": "Component",
+      "role": "infrastructure",
+      "compose_service": "user_redis",
+      "engine": "redis",
+      "aliases": [
+        "user_redis"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/redis/docker-compose.yaml",
+        "pointer": "/services/user_redis",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "database.ftgo.feedback-mongo",
+      "kind": "Database",
+      "role": "infrastructure",
+      "compose_service": "feedback_mongo",
+      "engine": "mongodb",
+      "aliases": [
+        "feedback_mongo"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/mongo/docker-compose.yaml",
+        "pointer": "/services/feedback_mongo",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "database.ftgo.location-postgres",
+      "kind": "Database",
+      "role": "infrastructure",
+      "compose_service": "location_postgres",
+      "engine": "postgresql",
+      "aliases": [
+        "location_postgres"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/postgres/docker-compose.yaml",
+        "pointer": "/services/location_postgres",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "database.ftgo.metabase-db",
+      "kind": "Database",
+      "role": "infrastructure",
+      "compose_service": "metabase_db",
+      "engine": "postgresql",
+      "aliases": [
+        "metabase_db"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/admin/docker-compose.yaml",
+        "pointer": "/services/metabase_db",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "database.ftgo.mongo-admin-db",
+      "kind": "Database",
+      "role": "infrastructure",
+      "compose_service": "mongo_admin_db",
+      "engine": "mongodb",
+      "aliases": [
+        "mongo_admin_db"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/admin/docker-compose.yaml",
+        "pointer": "/services/mongo_admin_db",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "database.ftgo.order-mongo",
+      "kind": "Database",
+      "role": "infrastructure",
+      "compose_service": "order_mongo",
+      "engine": "mongodb",
+      "aliases": [
+        "order_mongo"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/mongo/docker-compose.yaml",
+        "pointer": "/services/order_mongo",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "database.ftgo.restaurant-postgres",
+      "kind": "Database",
+      "role": "infrastructure",
+      "compose_service": "restaurant_postgres",
+      "engine": "postgresql",
+      "aliases": [
+        "restaurant_postgres"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/postgres/docker-compose.yaml",
+        "pointer": "/services/restaurant_postgres",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "id": "database.ftgo.user-postgres",
+      "kind": "Database",
+      "role": "infrastructure",
+      "compose_service": "user_postgres",
+      "engine": "postgresql",
+      "aliases": [
+        "user_postgres"
+      ],
+      "source": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/infra/postgres/docker-compose.yaml",
+        "pointer": "/services/user_postgres",
+        "evidence_type": "implemented"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": "service.ftgo.feedback",
+      "type": "DEPENDS_ON",
+      "target": "database.ftgo.feedback-mongo",
+      "config_key": "MONGO_HOST",
+      "referenced_host": "feedback_mongo",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/feedback_service/environment/MONGO_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.feedback",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.rabbitmq",
+      "config_key": "RABBITMQ_HOST",
+      "referenced_host": "rabbitmq",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/feedback_service/environment/RABBITMQ_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.gateway",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.rabbitmq",
+      "config_key": "RABBITMQ_HOST",
+      "referenced_host": "rabbitmq",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/gateway_service/environment/RABBITMQ_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.gateway",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.gateway-redis",
+      "config_key": "REDIS_HOST",
+      "referenced_host": "gateway_redis",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/gateway_service/environment/REDIS_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.location",
+      "type": "DEPENDS_ON",
+      "target": "database.ftgo.location-postgres",
+      "config_key": "POSTGRES_HOST",
+      "referenced_host": "location_postgres",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/location_service/environment/POSTGRES_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.location",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.rabbitmq",
+      "config_key": "RABBITMQ_HOST",
+      "referenced_host": "rabbitmq",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/location_service/environment/RABBITMQ_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.location",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.location-redis",
+      "config_key": "REDIS_HOST",
+      "referenced_host": "location_redis",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/location_service/environment/REDIS_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.order",
+      "type": "DEPENDS_ON",
+      "target": "database.ftgo.order-mongo",
+      "config_key": "MONGO_HOST",
+      "referenced_host": "order_mongo",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/order_service/environment/MONGO_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.order",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.rabbitmq",
+      "config_key": "RABBITMQ_HOST",
+      "referenced_host": "rabbitmq",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/order_service/environment/RABBITMQ_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.order",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.order-redis",
+      "config_key": "REDIS_HOST",
+      "referenced_host": "order_redis",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/order_service/environment/REDIS_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.restaurant",
+      "type": "DEPENDS_ON",
+      "target": "database.ftgo.restaurant-postgres",
+      "config_key": "POSTGRES_HOST",
+      "referenced_host": "restaurant_postgres",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/restaurant_service/environment/POSTGRES_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.restaurant",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.rabbitmq",
+      "config_key": "RABBITMQ_HOST",
+      "referenced_host": "rabbitmq",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/restaurant_service/environment/RABBITMQ_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.restaurant",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.restaurant-redis",
+      "config_key": "REDIS_HOST",
+      "referenced_host": "restaurant_redis",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/restaurant_service/environment/REDIS_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.user",
+      "type": "DEPENDS_ON",
+      "target": "database.ftgo.user-postgres",
+      "config_key": "POSTGRES_HOST",
+      "referenced_host": "user_postgres",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/user_service/environment/POSTGRES_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.user",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.rabbitmq",
+      "config_key": "RABBITMQ_HOST",
+      "referenced_host": "rabbitmq",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/user_service/environment/RABBITMQ_HOST",
+        "evidence_type": "implemented"
+      }
+    },
+    {
+      "source": "service.ftgo.user",
+      "type": "DEPENDS_ON",
+      "target": "component.ftgo.user-redis",
+      "config_key": "REDIS_HOST",
+      "referenced_host": "user_redis",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/user_service/environment/REDIS_HOST",
+        "evidence_type": "implemented"
+      }
+    }
+  ],
+  "unresolved_dependencies": [
+    {
+      "source": "service.ftgo.feedback",
+      "config_key": "REDIS_HOST",
+      "referenced_host": "feedback_redis",
+      "reason": "no infrastructure service, hostname, or container_name alias matched",
+      "source_evidence": {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/docker-compose.yaml",
+        "pointer": "/services/feedback_service/environment/REDIS_HOST",
+        "evidence_type": "implemented"
+      }
+    }
+  ],
+  "warnings": [
+    "backend/infra/docker-compose.yaml: Compose 'include' directives are not traversed; the manifest source patterns already enumerate the included files",
+    "backend/infra/docker-compose.yaml: no Compose 'services' mapping, skipped",
+    "backend/infra/monitoring/grafana/datasource.yaml: no Compose 'services' mapping, skipped",
+    "backend/infra/monitoring/prometheus/prometheus.yaml: no Compose 'services' mapping, skipped",
+    "backend/infra/admin/docker-compose.yaml: service 'metabase' uses unrecognized image 'metabase/metabase:latest'; no entity created (infrastructure is never invented)",
+    "backend/infra/admin/docker-compose.yaml: service 'mongo_express' uses unrecognized image 'mongo-express'; no entity created (infrastructure is never invented)",
+    "backend/infra/admin/docker-compose.yaml: service 'redis_insight' uses unrecognized image 'redislabs/redisinsight:latest'; no entity created (infrastructure is never invented)",
+    "backend/infra/monitoring/docker-compose.yaml: service 'grafana' uses unrecognized image 'grafana/grafana'; no entity created (infrastructure is never invented)",
+    "backend/infra/monitoring/docker-compose.yaml: service 'prometheus' uses unrecognized image 'prom/prometheus'; no entity created (infrastructure is never invented)",
+    "gateway_service: SERVICE_HOST=0.0.0.0 is a local bind address, not a dependency reference; skipped"
+  ],
+  "secret_values_emitted": 0
+}
