@@ -40,6 +40,8 @@ import yaml
 from ..repository_manifest import RepositoryRecord, resolve_source_files
 
 EXTRACTOR_KIND = "compose"
+# Output subdirectories owned by this extractor, used for stale-candidate pruning.
+CANDIDATE_SUBDIRECTORIES = ("services", "infrastructure")
 CANDIDATE_STATUS = "candidate"
 CANDIDATE_REVIEW_STATUS = "pending"
 EVIDENCE_TYPE = "implemented"
@@ -731,3 +733,27 @@ def render_bundle(extraction: ComposeExtraction) -> tuple[dict[str, str], dict[s
     scanned = {**rendered, "extraction-report.json": render_report_json(provisional)}
     leaks = count_secret_leaks(extraction, scanned)
     return rendered, build_report(extraction, leaks)
+
+
+def summarize(extraction: ComposeExtraction, report: dict[str, Any]) -> dict[str, Any]:
+    """CLI-facing summary of one extraction run."""
+    return {
+        "extractor": report["extractor"],
+        "repository": extraction.repository,
+        "commit": extraction.commit,
+        "commit_verified": True,
+        "source_files": list(extraction.source_files),
+        "counts": report["counts"],
+        "application_services": [entity.id for entity in extraction.services],
+        "infrastructure_entities": [entity.id for entity in extraction.infrastructure],
+        "relationships": [
+            f"{relation.source} -{relation.type}-> {relation.target}"
+            f" ({relation.config_key}={relation.referenced_host})"
+            for relation in extraction.relationships
+        ],
+        "unresolved_dependencies": [item.summary() for item in extraction.unresolved_dependencies],
+        "warnings": list(extraction.warnings),
+        "secret_values_emitted": report["secret_values_emitted"],
+        "graph_mutations": 0,
+        "graphiti": "disabled",
+    }

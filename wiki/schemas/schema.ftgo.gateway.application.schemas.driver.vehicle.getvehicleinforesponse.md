@@ -1,0 +1,73 @@
+---
+id: schema.ftgo.gateway.application.schemas.driver.vehicle.getvehicleinforesponse
+kind: Schema
+type: Schema
+title: GetVehicleInfoResponse
+status: approved
+review_status: approved
+candidate_of: fastapi-extraction
+repository: ftgo
+commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+evidence_type: implemented
+extractor: fastapi
+service: service.ftgo.gateway
+owner: aide-ftgo-cohort
+qualified_name: application.schemas.driver.vehicle.GetVehicleInfoResponse
+pydantic_confirmed: true
+base_resolution: pydantic_basemodel
+bases:
+- BaseModel
+source_refs:
+- repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/schemas/driver/vehicle.py
+  symbol: application.schemas.driver.vehicle.GetVehicleInfoResponse
+  line_start: 18
+  line_end: 22
+  evidence_type: implemented
+inbound_relations:
+- type: USES_SCHEMA
+  source: endpoint.ftgo.gateway.get.vehicle.get-info
+  role: response
+  symbol: application.routes.driver.vehicle.get_info
+  type_expression: GetVehicleInfoResponse
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/driver/vehicle.py
+  line_start: 42
+  line_end: 42
+  evidence_type: implemented
+fields:
+- name: vehicle_id
+  annotation: str
+  default_expression: uuid_field()
+  line: 19
+- name: driver_id
+  annotation: str
+  default_expression: uuid_field()
+  line: 20
+- name: plate_number
+  annotation: str
+  default_expression: Field(..., min_length=1, max_length=100)
+  line: 21
+- name: license_number
+  annotation: str
+  default_expression: Field(..., min_length=1, max_length=100)
+  line: 22
+---
+
+# GetVehicleInfoResponse
+
+Candidate schema extracted from a class definition in `ftgo` at commit `52b1fd1b5d808e32b7925e890f560445a8460e7a`.
+
+- Qualified name: `application.schemas.driver.vehicle.GetVehicleInfoResponse`
+- Declared in: `backend/gateway/src/application/schemas/driver/vehicle.py` (lines 18-22)
+- Pydantic BaseModel confirmed in source: `True`
+- Base resolution: `pydantic_basemodel`
+- Used as: `response`
+- Evidence class: `implemented`
+
+## Review notes
+
+This page is a candidate awaiting review. Field annotations are recorded as source text and never evaluated; credential-shaped defaults are redacted at extraction time.
+

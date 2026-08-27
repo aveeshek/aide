@@ -38,6 +38,16 @@ relations:
   path: backend/docker-compose.yaml
   pointer: /services/gateway_service/environment/REDIS_HOST
   evidence_type: implemented
+- type: EXPOSES
+  target: api.ftgo.gateway
+  framework: fastapi
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/main.py
+  symbol: main.app
+  line_start: 24
+  line_end: 28
+  evidence_type: implemented
 attributes:
   build_context: ./gateway
   build_dockerfile: Dockerfile
