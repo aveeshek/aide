@@ -47,6 +47,312 @@ relations:
   path: backend/docker-compose.yaml
   pointer: /services/user_service/environment/REDIS_HOST
   evidence_type: implemented
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.vehicle.delete
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - VehicleService.delete_vehicle
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.vehicle.get-info
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - VehicleService.get_vehicle_info
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.vehicle.register
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - VehicleService.register_vehicle
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.address.add-address
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - AddressService.add_address
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.address.delete
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - AddressService.delete_address
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.address.get-address-info
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - AddressService.get_address_info
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.address.get-all-addresses
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - AddressService.get_all_addresses
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.address.get-default-address
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - AddressService.get_default_address
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.address.set-preferred-address
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - AddressService.set_preferred_address
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.address.update-information
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - AddressService.update_information
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.create
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.register
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.delete-account
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.delete_account
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.get-info
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.get_info
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.login
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.login
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.logout
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.logout
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.resend-auth-code
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.resend_auth_code
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.update-profile
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.update_profile
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.user.profile.verify-account
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/events.py
+  symbol: events.register_events
+  line_start: 39
+  line_end: 39
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/user/src/events.py:39
+  handlers:
+  - ProfileService.verify_account
 attributes:
   build_context: ./microservices/user
   build_dockerfile: Dockerfile

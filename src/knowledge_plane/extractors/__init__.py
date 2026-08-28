@@ -14,6 +14,9 @@ Every extractor exposes the same four-function contract so the CLI stays extract
 ``candidate_subdirectories``
     The output subdirectories the extractor owns, so stale candidates can be pruned
     without ever deleting a directory another pass wrote.
+``sidecars`` (optional)
+    Extra output files the extractor owns beyond the candidate pages and the report, keyed
+    by output-relative path. A dry run renders them in memory and writes none of them.
 """
 
 from __future__ import annotations
@@ -24,6 +27,7 @@ from typing import Any
 
 from . import compose as _compose
 from . import fastapi as _fastapi
+from . import rabbitmq as _rabbitmq
 from .compose import EXTRACTOR_KIND as COMPOSE_KIND
 from .compose import (
     ComposeExtraction,
@@ -44,17 +48,28 @@ from .fastapi import (
     UnresolvedSchema,
     extract_fastapi,
 )
+from .rabbitmq import EXTRACTOR_KIND as RABBITMQ_KIND
+from .rabbitmq import (
+    BrokerInteraction,
+    BrokerWrapper,
+    EventCandidate,
+    IdentityCollision,
+    RabbitExtraction,
+    UnresolvedIdentifier,
+    extract_rabbitmq,
+)
 
 
 @dataclass(frozen=True, slots=True)
 class ExtractorSpec:
-    """One registered extractor and the four callables the CLI needs."""
+    """One registered extractor and the callables the CLI needs."""
 
     kind: str
     extract: Callable[..., Any]
     render_bundle: Callable[[Any], tuple[dict[str, str], dict[str, Any]]]
     summarize: Callable[[Any, dict[str, Any]], dict[str, Any]]
     candidate_subdirectories: tuple[str, ...]
+    sidecars: Callable[[Any, dict[str, Any]], dict[str, str]] | None = None
 
 
 EXTRACTORS: dict[str, ExtractorSpec] = {
@@ -72,6 +87,14 @@ EXTRACTORS: dict[str, ExtractorSpec] = {
         summarize=_fastapi.summarize,
         candidate_subdirectories=_fastapi.CANDIDATE_SUBDIRECTORIES,
     ),
+    RABBITMQ_KIND: ExtractorSpec(
+        kind=RABBITMQ_KIND,
+        extract=extract_rabbitmq,
+        render_bundle=_rabbitmq.render_bundle,
+        summarize=_rabbitmq.summarize,
+        candidate_subdirectories=_rabbitmq.CANDIDATE_SUBDIRECTORIES,
+        sidecars=_rabbitmq.render_sidecars,
+    ),
 }
 
 # Extractor kinds available to `python -m knowledge_plane.extract --kind ...`.
@@ -82,19 +105,27 @@ __all__ = [
     "COMPOSE_KIND",
     "EXTRACTORS",
     "FASTAPI_KIND",
+    "RABBITMQ_KIND",
     "ApiCandidate",
+    "BrokerInteraction",
+    "BrokerWrapper",
     "ComposeExtraction",
     "EndpointCandidate",
     "EntityCandidate",
+    "EventCandidate",
     "ExtractorSpec",
     "FastApiExtraction",
+    "IdentityCollision",
     "Provenance",
+    "RabbitExtraction",
     "RelationshipCandidate",
     "SchemaCandidate",
     "ServiceScan",
     "UnresolvedDependency",
+    "UnresolvedIdentifier",
     "UnresolvedRoute",
     "UnresolvedSchema",
     "extract_compose",
     "extract_fastapi",
+    "extract_rabbitmq",
 ]

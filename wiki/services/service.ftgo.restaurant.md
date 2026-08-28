@@ -47,6 +47,193 @@ relations:
   path: backend/docker-compose.yaml
   pointer: /services/restaurant_service/environment/REDIS_HOST
   evidence_type: implemented
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.menu.add-item
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - MenuService.add_item
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.menu.delete-item
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - MenuService.delete_item
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.menu.get-all-menu-item
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - MenuService.get_all_menu_item
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.menu.get-item-info
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - MenuService.get_item_info
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.menu.update-item
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - MenuService.update_item
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.supplier.delete-restaurant
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - RestaurantService.delete_restaurant
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.supplier.get-all-restaurant-info
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - RestaurantService.get_all_restaurant_info
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.supplier.get-restaurant-info
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - RestaurantService.get_restaurant_info
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.supplier.get-supplier-restaurant-info
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - RestaurantService.get_supplier_restaurant_info
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.supplier.register
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - RestaurantService.register
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.restaurant.supplier.update-information
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/events.py
+  symbol: events.register_events
+  line_start: 32
+  line_end: 32
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/restaurant/src/events.py:32
+  handlers:
+  - RestaurantService.update_information
 attributes:
   build_context: ./microservices/restaurant
   build_dockerfile: Dockerfile

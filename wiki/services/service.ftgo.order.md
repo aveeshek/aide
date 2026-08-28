@@ -47,6 +47,176 @@ relations:
   path: backend/docker-compose.yaml
   pointer: /services/order_service/environment/REDIS_HOST
   evidence_type: implemented
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.cancel
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - OrderStatusService.cancel_order
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.create
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - OrderService.create_order
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.delivery.driver-found
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - DeliveryService.assign_driver_to_delivery
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.delivery.get-details
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - DeliveryService.get_delivery_details
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.delivery.update-status
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - DeliveryService.update_delivery_status
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.get-details
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - OrderService.get_order_details
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.restaurant.confirm
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - RestaurantService.confirm_order
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.restaurant.reject
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - RestaurantService.reject_order
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.status.change
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - OrderStatusService.change_order_status
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.update
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/events.py
+  symbol: events.register_events
+  line_start: 45
+  line_end: 45
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/order/src/events.py:45
+  handlers:
+  - OrderService.update_order
 attributes:
   build_context: ./microservices/order
   build_dockerfile: Dockerfile

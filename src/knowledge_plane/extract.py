@@ -97,6 +97,11 @@ def write_candidates(
 
     report_json = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
     _write_text(output_dir / REPORT_FILENAME, report_json)
+
+    if spec.sidecars is not None:
+        for relative_path, content in sorted(spec.sidecars(extraction, report).items()):
+            _write_text(output_dir / relative_path, content)
+
     return report, sorted(relative for relative in rendered)
 
 

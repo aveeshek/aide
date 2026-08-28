@@ -47,6 +47,142 @@ relations:
   path: backend/docker-compose.yaml
   pointer: /services/location_service/environment/REDIS_HOST
   evidence_type: implemented
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.availability.available
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - DriverService.set_driver_available
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.availability.occupied
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - DriverService.set_driver_occupied
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.location.get
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - DriverService.get_last_location
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.location.submit
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - DriverService.submit_location
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.status.get
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - DriverService.get_driver_status
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.status.offline
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - DriverService.change_status_offline
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.driver.status.online
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - DriverService.change_status_online
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.location.drivers.get-nearest
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/events.py
+  symbol: events.register_events
+  line_start: 29
+  line_end: 29
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/location/src/events.py:29
+  handlers:
+  - TrackerService.get_nearest_drivers
 attributes:
   build_context: ./microservices/location
   build_dockerfile: Dockerfile

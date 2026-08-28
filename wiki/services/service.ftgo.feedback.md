@@ -38,6 +38,176 @@ relations:
   path: backend/docker-compose.yaml
   pointer: /services/feedback_service/environment/RABBITMQ_HOST
   evidence_type: implemented
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.delivery.rating.create
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - DeliveryRatingService.create_delivery_rating
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.delivery.rating.get-customer-ratings
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - DeliveryRatingService.get_customer_delivery_ratings
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.delivery.rating.get-details
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - DeliveryRatingService.get_delivery_rating
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.delivery.rating.get-driver-ratings
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - DeliveryRatingService.get_driver_delivery_ratings
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.delivery.rating.update
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - DeliveryRatingService.update_delivery_rating
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.rating.create
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - OrderRatingService.create_order_rating
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.rating.get-customer-ratings
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - OrderRatingService.get_customer_order_ratings
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.rating.get-details
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - OrderRatingService.get_order_rating
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.rating.get-restaurant-ratings
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - OrderRatingService.get_restaurant_order_ratings
+- type: CONSUMES
+  target: event.ftgo.rabbitmq.order.rating.update
+  role: consumer
+  operation: register_event
+  broker_library: rabbitmq_rpc
+  mechanism: rpc
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/events.py
+  symbol: events.register_events
+  line_start: 37
+  line_end: 37
+  evidence_type: implemented
+  call_sites:
+  - backend/microservices/feedback/src/events.py:37
+  handlers:
+  - OrderRatingService.update_order_rating
 attributes:
   build_context: ./microservices/feedback
   build_dockerfile: Dockerfile
