@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "extractor": "data-model",
+  "repository": "ftgo",
+  "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+  "status": "candidate",
+  "review_status": "pending",
+  "note": "Candidate outgoing relations for existing canonical Database pages. This file is not canonical knowledge and must not be copied into wiki/ without review.",
+  "databases": [
+    {
+      "database": "database.ftgo.feedback-mongo",
+      "relation_count": 2,
+      "relations": [
+        {
+          "source": "database.ftgo.feedback-mongo",
+          "type": "CONTAINS",
+          "target": "collection.ftgo.feedback.delivery-ratings",
+          "collection_name": "delivery_ratings",
+          "storage_engine": "mongodb",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/feedback/src/models/delivery_rating.py",
+            "symbol": "models.delivery_rating.DeliveryRating",
+            "line_start": 10,
+            "line_end": 39,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "database.ftgo.feedback-mongo",
+          "type": "CONTAINS",
+          "target": "collection.ftgo.feedback.order-ratings",
+          "collection_name": "order_ratings",
+          "storage_engine": "mongodb",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/feedback/src/models/order_rating.py",
+            "symbol": "models.order_rating.OrderRating",
+            "line_start": 9,
+            "line_end": 34,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "database": "database.ftgo.location-postgres",
+      "relation_count": 1,
+      "relations": [
+        {
+          "source": "database.ftgo.location-postgres",
+          "type": "CONTAINS",
+          "target": "table.ftgo.location.driver-location",
+          "table_name": "driver_location",
+          "storage_engine": "postgresql",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/location/src/data_access/models/driver_location.py",
+            "symbol": "data_access.models.driver_location.DriverLocation",
+            "line_start": 11,
+            "line_end": 49,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "database": "database.ftgo.order-mongo",
+      "relation_count": 4,
+      "relations": [
+        {
+          "source": "database.ftgo.order-mongo",
+          "type": "CONTAINS",
+          "target": "collection.ftgo.order.delivery-details",
+          "collection_name": "delivery_details",
+          "storage_engine": "mongodb",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/models/delivery_detail.py",
+            "symbol": "models.delivery_detail.DeliveryDetail",
+            "line_start": 11,
+            "line_end": 38,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "database.ftgo.order-mongo",
+          "type": "CONTAINS",
+          "target": "collection.ftgo.order.order-items",
+          "collection_name": "order_items",
+          "storage_engine": "mongodb",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/models/order_item.py",
+            "symbol": "models.order_item.OrderItem",
+            "line_start": 9,
+            "line_end": 36,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "database.ftgo.order-mongo",
+          "type": "CONTAINS",
+          "target": "collection.ftgo.order.order-status",
+          "collection_name": "order_status",
+          "storage_engine": "mongodb",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/models/order_status.py",
+            "symbol": "models.order_status.OrderStatus",
+            "line_start": 9,
+            "line_end": 34,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "database.ftgo.order-mongo",
+          "type": "CONTAINS",
+          "target": "collection.ftgo.order.orders",
+          "collection_name": "orders",
+          "storage_engine": "mongodb",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/models/order.py",
+            "symbol": "models.order.Order",
+            "line_start": 11,
+            "line_end": 40,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "database": "database.ftgo.restaurant-postgres",
+      "relation_count": 2,
+      "relations": [
+        {
+          "source": "database.ftgo.restaurant-postgres",
+          "type": "CONTAINS",
+          "target": "table.ftgo.restaurant.menu-item",
+          "table_name": "menu_item",
+          "storage_engine": "postgresql",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/restaurant/src/models/menu.py",
+            "symbol": "models.menu.MenuItem",
+            "line_start": 8,
+            "line_end": 21,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "database.ftgo.restaurant-postgres",
+          "type": "CONTAINS",
+          "target": "table.ftgo.restaurant.supplier-profile",
+          "table_name": "supplier_profile",
+          "storage_engine": "postgresql",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/restaurant/src/models/supplier.py",
+            "symbol": "models.supplier.Supplier",
+            "line_start": 10,
+            "line_end": 25,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "database": "database.ftgo.user-postgres",
+      "relation_count": 3,
+      "relations": [
+        {
+          "source": "database.ftgo.user-postgres",
+          "type": "CONTAINS",
+          "target": "table.ftgo.user.customer-address",
+          "table_name": "customer_address",
+          "storage_engine": "postgresql",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/models/address.py",
+            "symbol": "data_access.models.address.Address",
+            "line_start": 8,
+            "line_end": 51,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "database.ftgo.user-postgres",
+          "type": "CONTAINS",
+          "target": "table.ftgo.user.user-profile",
+          "table_name": "user_profile",
+          "storage_engine": "postgresql",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/models/profile.py",
+            "symbol": "data_access.models.profile.Profile",
+            "line_start": 10,
+            "line_end": 61,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "database.ftgo.user-postgres",
+          "type": "CONTAINS",
+          "target": "table.ftgo.user.vehicle-info",
+          "table_name": "vehicle_info",
+          "storage_engine": "postgresql",
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/models/vehicle.py",
+            "symbol": "data_access.models.vehicle.VehicleInfo",
+            "line_start": 7,
+            "line_end": 32,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    }
+  ]
+}

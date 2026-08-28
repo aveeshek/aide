@@ -36,6 +36,29 @@ attributes:
     POSTGRES_USER: restaurant_user
     POSTGRES_PASSWORD: '[redacted]'
     POSTGRES_DB: restaurant_database
+relations:
+- type: CONTAINS
+  target: table.ftgo.restaurant.menu-item
+  table_name: menu_item
+  storage_engine: postgresql
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/models/menu.py
+  symbol: models.menu.MenuItem
+  line_start: 8
+  line_end: 21
+  evidence_type: implemented
+- type: CONTAINS
+  target: table.ftgo.restaurant.supplier-profile
+  table_name: supplier_profile
+  storage_engine: postgresql
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/models/supplier.py
+  symbol: models.supplier.Supplier
+  line_start: 10
+  line_end: 25
+  evidence_type: implemented
 ---
 
 # restaurant_postgres
@@ -49,5 +72,5 @@ Candidate extracted from Docker Compose evidence in `ftgo` at commit `52b1fd1b5d
 
 ## Review notes
 
-This page is a candidate awaiting review. It is not canonical knowledge and secret values are redacted at extraction time.
+This page is approved canonical knowledge. Secret values are redacted at extraction time.
 

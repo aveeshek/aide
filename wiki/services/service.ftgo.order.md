@@ -217,6 +217,152 @@ relations:
   - backend/microservices/order/src/events.py:45
   handlers:
   - OrderService.update_order
+- type: WRITES
+  target: collection.ftgo.order.delivery-details
+  role: write
+  target_kind: Collection
+  persistence_library: beanie
+  call_site_count: 2
+  call_sites:
+  - operation: insert
+    resolution: class_attribute
+    call: self.document.insert()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/delivery.py
+    symbol: domain.entities.delivery.Delivery.save
+    line_start: 43
+    line_end: 43
+    evidence_type: implemented
+  - operation: save
+    resolution: class_attribute
+    call: self.document.save()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/delivery.py
+    symbol: domain.entities.delivery.Delivery.update_status
+    line_start: 55
+    line_end: 55
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/domain/entities/delivery.py
+  symbol: domain.entities.delivery.Delivery.save
+  line_start: 43
+  line_end: 43
+  evidence_type: implemented
+- type: WRITES
+  target: collection.ftgo.order.order-items
+  role: write
+  target_kind: Collection
+  persistence_library: beanie
+  call_site_count: 3
+  call_sites:
+  - operation: insert
+    resolution: class_attribute
+    call: self.document.insert()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/order_item.py
+    symbol: domain.entities.order_item.OrderItem.save
+    line_start: 42
+    line_end: 42
+    evidence_type: implemented
+  - operation: save
+    resolution: class_attribute
+    call: self.document.save()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/order_item.py
+    symbol: domain.entities.order_item.OrderItem.update_quantity
+    line_start: 52
+    line_end: 52
+    evidence_type: implemented
+  - operation: save
+    resolution: class_attribute
+    call: self.document.save()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/order_item.py
+    symbol: domain.entities.order_item.OrderItem.update_item_price
+    line_start: 62
+    line_end: 62
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/domain/entities/order_item.py
+  symbol: domain.entities.order_item.OrderItem.save
+  line_start: 42
+  line_end: 42
+  evidence_type: implemented
+- type: WRITES
+  target: collection.ftgo.order.order-status
+  role: write
+  target_kind: Collection
+  persistence_library: beanie
+  call_site_count: 1
+  call_sites:
+  - operation: insert
+    resolution: class_attribute
+    call: self.document.insert()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/order_status.py
+    symbol: domain.entities.order_status.OrderStatus.save
+    line_start: 40
+    line_end: 40
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/domain/entities/order_status.py
+  symbol: domain.entities.order_status.OrderStatus.save
+  line_start: 40
+  line_end: 40
+  evidence_type: implemented
+- type: WRITES
+  target: collection.ftgo.order.orders
+  role: write
+  target_kind: Collection
+  persistence_library: beanie
+  call_site_count: 3
+  call_sites:
+  - operation: insert
+    resolution: class_attribute
+    call: self.document.insert()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/order.py
+    symbol: domain.entities.order.Order.save
+    line_start: 46
+    line_end: 46
+    evidence_type: implemented
+  - operation: save
+    resolution: class_attribute
+    call: self.document.save()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/order.py
+    symbol: domain.entities.order.Order.calculate_total
+    line_start: 73
+    line_end: 73
+    evidence_type: implemented
+  - operation: save
+    resolution: class_attribute
+    call: self.document.save()
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/order/src/domain/entities/order.py
+    symbol: domain.entities.order.Order.change_status
+    line_start: 94
+    line_end: 94
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/order/src/domain/entities/order.py
+  symbol: domain.entities.order.Order.save
+  line_start: 46
+  line_end: 46
+  evidence_type: implemented
 attributes:
   build_context: ./microservices/order
   build_dockerfile: Dockerfile
@@ -261,5 +407,5 @@ Candidate extracted from Docker Compose evidence in `ftgo` at commit `52b1fd1b5d
 
 ## Review notes
 
-This page is a candidate awaiting review. It is not canonical knowledge and secret values are redacted at extraction time.
+This page is approved canonical knowledge. Secret values are redacted at extraction time.
 

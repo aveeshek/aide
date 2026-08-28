@@ -234,6 +234,175 @@ relations:
   - backend/microservices/restaurant/src/events.py:32
   handlers:
   - RestaurantService.update_information
+- type: READS
+  target: table.ftgo.restaurant.menu-item
+  role: read
+  target_kind: Table
+  persistence_library: sqlalchemy
+  call_site_count: 4
+  call_sites:
+  - operation: select
+    resolution: wrapper_argument
+    call: 'DatabaseRepository.fetch_by_query(MenuItem, query={"item_id": item_id},
+      one_or_none=True)'
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/menu.py
+    symbol: domain.menu.MenuDomain.load
+    line_start: 67
+    line_end: 67
+    evidence_type: implemented
+  - operation: select
+    resolution: wrapper_argument
+    call: 'DatabaseRepository.update_by_query( MenuItem, query={"item_id": item_id},
+      update_fields=update_fields, )'
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/menu.py
+    symbol: domain.menu.MenuDomain.update_item
+    line_start: 95
+    line_end: 99
+    evidence_type: implemented
+  - operation: select
+    resolution: wrapper_argument
+    call: 'DatabaseRepository.delete_by_query(MenuItem, query={"item_id": item_id})'
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/menu.py
+    symbol: domain.menu.MenuDomain.delete_item
+    line_start: 113
+    line_end: 113
+    evidence_type: implemented
+  - operation: select
+    resolution: wrapper_argument
+    call: 'DatabaseRepository.fetch_by_query(MenuItem, query={"restaurant_id": self.restaurant_id})'
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/restaurant.py
+    symbol: domain.restaurant.RestaurantDomain.load_all_menu_item
+    line_start: 205
+    line_end: 205
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/domain/menu.py
+  symbol: domain.menu.MenuDomain.load
+  line_start: 67
+  line_end: 67
+  evidence_type: implemented
+- type: READS
+  target: table.ftgo.restaurant.supplier-profile
+  role: read
+  target_kind: Table
+  persistence_library: sqlalchemy
+  call_site_count: 5
+  call_sites:
+  - operation: select
+    resolution: wrapper_argument
+    call: DatabaseRepository.fetch_by_query(Supplier, query=query_dict, one_or_none=True)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/restaurant.py
+    symbol: domain.restaurant.RestaurantDomain.load
+    line_start: 53
+    line_end: 53
+    evidence_type: implemented
+  - operation: select
+    resolution: wrapper_argument
+    call: DatabaseRepository.fetch_by_query(Supplier, query={})
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/restaurant.py
+    symbol: domain.restaurant.RestaurantDomain.load_all
+    line_start: 69
+    line_end: 69
+    evidence_type: implemented
+  - operation: select
+    resolution: wrapper_argument
+    call: 'DatabaseRepository.fetch_by_query(Supplier, query={"owner_user_id": owner_user_id})'
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/restaurant.py
+    symbol: domain.restaurant.RestaurantDomain.register
+    line_start: 88
+    line_end: 88
+    evidence_type: implemented
+  - operation: select
+    resolution: wrapper_argument
+    call: 'DatabaseRepository.update_by_query( Supplier, query={"id": restaurant_id},
+      update_fields=update_fields, )'
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/restaurant.py
+    symbol: domain.restaurant.RestaurantDomain.update_profile_information
+    line_start: 139
+    line_end: 143
+    evidence_type: implemented
+  - operation: select
+    resolution: wrapper_argument
+    call: 'DatabaseRepository.delete_by_query(Supplier, query={"id": self.restaurant_id})'
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/restaurant.py
+    symbol: domain.restaurant.RestaurantDomain.delete_restaurant
+    line_start: 153
+    line_end: 153
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/domain/restaurant.py
+  symbol: domain.restaurant.RestaurantDomain.load
+  line_start: 53
+  line_end: 53
+  evidence_type: implemented
+- type: WRITES
+  target: table.ftgo.restaurant.menu-item
+  role: write
+  target_kind: Table
+  persistence_library: asyncpg_client
+  call_site_count: 1
+  call_sites:
+  - operation: add
+    resolution: wrapper_argument
+    call: DatabaseRepository.insert(new_item)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/menu.py
+    symbol: domain.menu.MenuDomain.add_item
+    line_start: 50
+    line_end: 50
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/domain/menu.py
+  symbol: domain.menu.MenuDomain.add_item
+  line_start: 50
+  line_end: 50
+  evidence_type: implemented
+- type: WRITES
+  target: table.ftgo.restaurant.supplier-profile
+  role: write
+  target_kind: Table
+  persistence_library: asyncpg_client
+  call_site_count: 1
+  call_sites:
+  - operation: add
+    resolution: wrapper_argument
+    call: DatabaseRepository.insert(new_profile)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/restaurant/src/domain/restaurant.py
+    symbol: domain.restaurant.RestaurantDomain.register
+    line_start: 105
+    line_end: 105
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/restaurant/src/domain/restaurant.py
+  symbol: domain.restaurant.RestaurantDomain.register
+  line_start: 105
+  line_end: 105
+  evidence_type: implemented
 attributes:
   build_context: ./microservices/restaurant
   build_dockerfile: Dockerfile
@@ -278,5 +447,5 @@ Candidate extracted from Docker Compose evidence in `ftgo` at commit `52b1fd1b5d
 
 ## Review notes
 
-This page is a candidate awaiting review. It is not canonical knowledge and secret values are redacted at extraction time.
+This page is approved canonical knowledge. Secret values are redacted at extraction time.
 

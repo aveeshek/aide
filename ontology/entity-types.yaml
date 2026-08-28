@@ -16,6 +16,7 @@ entity_types:
   - Database
   - Table
   - Column
+  - Collection
   - Migration
   - UserFlow
   - FlowStep

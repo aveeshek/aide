@@ -36,6 +36,18 @@ attributes:
     POSTGRES_USER: location_user
     POSTGRES_PASSWORD: '[redacted]'
     POSTGRES_DB: location_database
+relations:
+- type: CONTAINS
+  target: table.ftgo.location.driver-location
+  table_name: driver_location
+  storage_engine: postgresql
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/location/src/data_access/models/driver_location.py
+  symbol: data_access.models.driver_location.DriverLocation
+  line_start: 11
+  line_end: 49
+  evidence_type: implemented
 ---
 
 # location_postgres
@@ -49,5 +61,5 @@ Candidate extracted from Docker Compose evidence in `ftgo` at commit `52b1fd1b5d
 
 ## Review notes
 
-This page is a candidate awaiting review. It is not canonical knowledge and secret values are redacted at extraction time.
+This page is approved canonical knowledge. Secret values are redacted at extraction time.
 

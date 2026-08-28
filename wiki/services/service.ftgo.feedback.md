@@ -208,6 +208,74 @@ relations:
   - backend/microservices/feedback/src/events.py:37
   handlers:
   - OrderRatingService.update_order_rating
+- type: READS
+  target: collection.ftgo.feedback.delivery-ratings
+  role: read
+  target_kind: Collection
+  persistence_library: beanie
+  call_site_count: 2
+  call_sites:
+  - operation: find_all
+    resolution: direct_model_reference
+    call: DeliveryRatingModel.find_all(customer_id=customer_id)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/feedback/src/domain/delivery_rating.py
+    symbol: domain.delivery_rating.DeliveryRatingHandler.get_customer_delivery_ratings
+    line_start: 51
+    line_end: 51
+    evidence_type: implemented
+  - operation: find_all
+    resolution: direct_model_reference
+    call: DeliveryRatingModel.find_all(driver_id=driver_id)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/feedback/src/domain/delivery_rating.py
+    symbol: domain.delivery_rating.DeliveryRatingHandler.get_driver_delivery_ratings
+    line_start: 61
+    line_end: 61
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/domain/delivery_rating.py
+  symbol: domain.delivery_rating.DeliveryRatingHandler.get_customer_delivery_ratings
+  line_start: 51
+  line_end: 51
+  evidence_type: implemented
+- type: READS
+  target: collection.ftgo.feedback.order-ratings
+  role: read
+  target_kind: Collection
+  persistence_library: beanie
+  call_site_count: 2
+  call_sites:
+  - operation: find_all
+    resolution: direct_model_reference
+    call: OrderRatingModel.find_all(customer_id=customer_id)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/feedback/src/domain/order_rating.py
+    symbol: domain.order_rating.OrderRatingHandler.get_customer_order_ratings
+    line_start: 57
+    line_end: 57
+    evidence_type: implemented
+  - operation: find_all
+    resolution: direct_model_reference
+    call: OrderRatingModel.find_all(restaurant_id=restaurant_id)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/feedback/src/domain/order_rating.py
+    symbol: domain.order_rating.OrderRatingHandler.get_restaurant_order_ratings
+    line_start: 67
+    line_end: 67
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/feedback/src/domain/order_rating.py
+  symbol: domain.order_rating.OrderRatingHandler.get_customer_order_ratings
+  line_start: 57
+  line_end: 57
+  evidence_type: implemented
 attributes:
   build_context: ./microservices/feedback
   build_dockerfile: Dockerfile
@@ -251,5 +319,5 @@ Candidate extracted from Docker Compose evidence in `ftgo` at commit `52b1fd1b5d
 
 ## Review notes
 
-This page is a candidate awaiting review. It is not canonical knowledge and secret values are redacted at extraction time.
+This page is approved canonical knowledge. Secret values are redacted at extraction time.
 

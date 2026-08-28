@@ -26,6 +26,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from . import compose as _compose
+from . import data_model as _data_model
 from . import fastapi as _fastapi
 from . import rabbitmq as _rabbitmq
 from .compose import EXTRACTOR_KIND as COMPOSE_KIND
@@ -36,6 +37,19 @@ from .compose import (
     RelationshipCandidate,
     UnresolvedDependency,
     extract_compose,
+)
+from .data_model import EXTRACTOR_KIND as DATA_MODEL_KIND
+from .data_model import (
+    AccessCandidate,
+    CollectionCandidate,
+    ColumnCandidate,
+    DatabaseMapping,
+    DataModelExtraction,
+    DocumentSchemaCandidate,
+    MigrationCandidate,
+    OntologyGap,
+    TableCandidate,
+    extract_data_model,
 )
 from .fastapi import EXTRACTOR_KIND as FASTAPI_KIND
 from .fastapi import (
@@ -95,6 +109,14 @@ EXTRACTORS: dict[str, ExtractorSpec] = {
         candidate_subdirectories=_rabbitmq.CANDIDATE_SUBDIRECTORIES,
         sidecars=_rabbitmq.render_sidecars,
     ),
+    DATA_MODEL_KIND: ExtractorSpec(
+        kind=DATA_MODEL_KIND,
+        extract=extract_data_model,
+        render_bundle=_data_model.render_bundle,
+        summarize=_data_model.summarize,
+        candidate_subdirectories=_data_model.CANDIDATE_SUBDIRECTORIES,
+        sidecars=_data_model.render_sidecars,
+    ),
 }
 
 # Extractor kinds available to `python -m knowledge_plane.extract --kind ...`.
@@ -103,21 +125,31 @@ AVAILABLE_KINDS: tuple[str, ...] = tuple(EXTRACTORS)
 __all__ = [
     "AVAILABLE_KINDS",
     "COMPOSE_KIND",
+    "DATA_MODEL_KIND",
     "EXTRACTORS",
     "FASTAPI_KIND",
     "RABBITMQ_KIND",
+    "AccessCandidate",
     "ApiCandidate",
     "BrokerInteraction",
     "BrokerWrapper",
+    "CollectionCandidate",
+    "ColumnCandidate",
     "ComposeExtraction",
+    "DataModelExtraction",
+    "DatabaseMapping",
+    "DocumentSchemaCandidate",
     "EndpointCandidate",
     "EntityCandidate",
     "EventCandidate",
     "ExtractorSpec",
     "FastApiExtraction",
     "IdentityCollision",
+    "MigrationCandidate",
+    "OntologyGap",
     "Provenance",
     "RabbitExtraction",
+    "TableCandidate",
     "RelationshipCandidate",
     "SchemaCandidate",
     "ServiceScan",
@@ -126,6 +158,7 @@ __all__ = [
     "UnresolvedRoute",
     "UnresolvedSchema",
     "extract_compose",
+    "extract_data_model",
     "extract_fastapi",
     "extract_rabbitmq",
 ]

@@ -1,0 +1,977 @@
+{
+  "version": 1,
+  "extractor": "data-model",
+  "repository": "ftgo",
+  "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+  "status": "candidate",
+  "review_status": "pending",
+  "note": "Candidate outgoing READS/WRITES relations for existing canonical Service pages. This file is not canonical knowledge and must not be copied into wiki/ without review.",
+  "services": [
+    {
+      "service": "service.ftgo.feedback",
+      "relation_count": 2,
+      "relations": [
+        {
+          "source": "service.ftgo.feedback",
+          "type": "READS",
+          "target": "collection.ftgo.feedback.delivery-ratings",
+          "role": "read",
+          "target_kind": "Collection",
+          "persistence_library": "beanie",
+          "call_site_count": 2,
+          "call_sites": [
+            {
+              "operation": "find_all",
+              "resolution": "direct_model_reference",
+              "call": "DeliveryRatingModel.find_all(customer_id=customer_id)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/feedback/src/domain/delivery_rating.py",
+              "symbol": "domain.delivery_rating.DeliveryRatingHandler.get_customer_delivery_ratings",
+              "line_start": 51,
+              "line_end": 51,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "find_all",
+              "resolution": "direct_model_reference",
+              "call": "DeliveryRatingModel.find_all(driver_id=driver_id)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/feedback/src/domain/delivery_rating.py",
+              "symbol": "domain.delivery_rating.DeliveryRatingHandler.get_driver_delivery_ratings",
+              "line_start": 61,
+              "line_end": 61,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/feedback/src/domain/delivery_rating.py",
+            "symbol": "domain.delivery_rating.DeliveryRatingHandler.get_customer_delivery_ratings",
+            "line_start": 51,
+            "line_end": 51,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.feedback",
+          "type": "READS",
+          "target": "collection.ftgo.feedback.order-ratings",
+          "role": "read",
+          "target_kind": "Collection",
+          "persistence_library": "beanie",
+          "call_site_count": 2,
+          "call_sites": [
+            {
+              "operation": "find_all",
+              "resolution": "direct_model_reference",
+              "call": "OrderRatingModel.find_all(customer_id=customer_id)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/feedback/src/domain/order_rating.py",
+              "symbol": "domain.order_rating.OrderRatingHandler.get_customer_order_ratings",
+              "line_start": 57,
+              "line_end": 57,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "find_all",
+              "resolution": "direct_model_reference",
+              "call": "OrderRatingModel.find_all(restaurant_id=restaurant_id)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/feedback/src/domain/order_rating.py",
+              "symbol": "domain.order_rating.OrderRatingHandler.get_restaurant_order_ratings",
+              "line_start": 67,
+              "line_end": 67,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/feedback/src/domain/order_rating.py",
+            "symbol": "domain.order_rating.OrderRatingHandler.get_customer_order_ratings",
+            "line_start": 57,
+            "line_end": 57,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "service": "service.ftgo.location",
+      "relation_count": 2,
+      "relations": [
+        {
+          "source": "service.ftgo.location",
+          "type": "READS",
+          "target": "table.ftgo.location.driver-location",
+          "role": "read",
+          "target_kind": "Table",
+          "persistence_library": "sqlalchemy",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+              "line_start": 53,
+              "line_end": 53,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 95,
+              "line_end": 95,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 119,
+              "line_end": 119,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+            "line_start": 53,
+            "line_end": 53,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.location",
+          "type": "WRITES",
+          "target": "table.ftgo.location.driver-location",
+          "role": "write",
+          "target_kind": "Table",
+          "persistence_library": "asyncpg_client",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "add_all",
+              "resolution": "model_map_enumeration",
+              "call": "session.add_all(model_instances)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+              "line_start": 72,
+              "line_end": 72,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "add",
+              "resolution": "model_map_enumeration",
+              "call": "session.add(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 103,
+              "line_end": 103,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "delete",
+              "resolution": "model_map_enumeration",
+              "call": "session.delete(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 125,
+              "line_end": 125,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/location/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+            "line_start": 72,
+            "line_end": 72,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "service": "service.ftgo.order",
+      "relation_count": 4,
+      "relations": [
+        {
+          "source": "service.ftgo.order",
+          "type": "WRITES",
+          "target": "collection.ftgo.order.delivery-details",
+          "role": "write",
+          "target_kind": "Collection",
+          "persistence_library": "beanie",
+          "call_site_count": 2,
+          "call_sites": [
+            {
+              "operation": "insert",
+              "resolution": "class_attribute",
+              "call": "self.document.insert()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/delivery.py",
+              "symbol": "domain.entities.delivery.Delivery.save",
+              "line_start": 43,
+              "line_end": 43,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "save",
+              "resolution": "class_attribute",
+              "call": "self.document.save()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/delivery.py",
+              "symbol": "domain.entities.delivery.Delivery.update_status",
+              "line_start": 55,
+              "line_end": 55,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/domain/entities/delivery.py",
+            "symbol": "domain.entities.delivery.Delivery.save",
+            "line_start": 43,
+            "line_end": 43,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.order",
+          "type": "WRITES",
+          "target": "collection.ftgo.order.order-items",
+          "role": "write",
+          "target_kind": "Collection",
+          "persistence_library": "beanie",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "insert",
+              "resolution": "class_attribute",
+              "call": "self.document.insert()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/order_item.py",
+              "symbol": "domain.entities.order_item.OrderItem.save",
+              "line_start": 42,
+              "line_end": 42,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "save",
+              "resolution": "class_attribute",
+              "call": "self.document.save()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/order_item.py",
+              "symbol": "domain.entities.order_item.OrderItem.update_quantity",
+              "line_start": 52,
+              "line_end": 52,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "save",
+              "resolution": "class_attribute",
+              "call": "self.document.save()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/order_item.py",
+              "symbol": "domain.entities.order_item.OrderItem.update_item_price",
+              "line_start": 62,
+              "line_end": 62,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/domain/entities/order_item.py",
+            "symbol": "domain.entities.order_item.OrderItem.save",
+            "line_start": 42,
+            "line_end": 42,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.order",
+          "type": "WRITES",
+          "target": "collection.ftgo.order.order-status",
+          "role": "write",
+          "target_kind": "Collection",
+          "persistence_library": "beanie",
+          "call_site_count": 1,
+          "call_sites": [
+            {
+              "operation": "insert",
+              "resolution": "class_attribute",
+              "call": "self.document.insert()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/order_status.py",
+              "symbol": "domain.entities.order_status.OrderStatus.save",
+              "line_start": 40,
+              "line_end": 40,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/domain/entities/order_status.py",
+            "symbol": "domain.entities.order_status.OrderStatus.save",
+            "line_start": 40,
+            "line_end": 40,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.order",
+          "type": "WRITES",
+          "target": "collection.ftgo.order.orders",
+          "role": "write",
+          "target_kind": "Collection",
+          "persistence_library": "beanie",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "insert",
+              "resolution": "class_attribute",
+              "call": "self.document.insert()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/order.py",
+              "symbol": "domain.entities.order.Order.save",
+              "line_start": 46,
+              "line_end": 46,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "save",
+              "resolution": "class_attribute",
+              "call": "self.document.save()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/order.py",
+              "symbol": "domain.entities.order.Order.calculate_total",
+              "line_start": 73,
+              "line_end": 73,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "save",
+              "resolution": "class_attribute",
+              "call": "self.document.save()",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/order/src/domain/entities/order.py",
+              "symbol": "domain.entities.order.Order.change_status",
+              "line_start": 94,
+              "line_end": 94,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/order/src/domain/entities/order.py",
+            "symbol": "domain.entities.order.Order.save",
+            "line_start": 46,
+            "line_end": 46,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "service": "service.ftgo.restaurant",
+      "relation_count": 4,
+      "relations": [
+        {
+          "source": "service.ftgo.restaurant",
+          "type": "READS",
+          "target": "table.ftgo.restaurant.menu-item",
+          "role": "read",
+          "target_kind": "Table",
+          "persistence_library": "sqlalchemy",
+          "call_site_count": 4,
+          "call_sites": [
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.fetch_by_query(MenuItem, query={\"item_id\": item_id}, one_or_none=True)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/menu.py",
+              "symbol": "domain.menu.MenuDomain.load",
+              "line_start": 67,
+              "line_end": 67,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.update_by_query( MenuItem, query={\"item_id\": item_id}, update_fields=update_fields, )",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/menu.py",
+              "symbol": "domain.menu.MenuDomain.update_item",
+              "line_start": 95,
+              "line_end": 99,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.delete_by_query(MenuItem, query={\"item_id\": item_id})",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/menu.py",
+              "symbol": "domain.menu.MenuDomain.delete_item",
+              "line_start": 113,
+              "line_end": 113,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.fetch_by_query(MenuItem, query={\"restaurant_id\": self.restaurant_id})",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+              "symbol": "domain.restaurant.RestaurantDomain.load_all_menu_item",
+              "line_start": 205,
+              "line_end": 205,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/restaurant/src/domain/menu.py",
+            "symbol": "domain.menu.MenuDomain.load",
+            "line_start": 67,
+            "line_end": 67,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.restaurant",
+          "type": "READS",
+          "target": "table.ftgo.restaurant.supplier-profile",
+          "role": "read",
+          "target_kind": "Table",
+          "persistence_library": "sqlalchemy",
+          "call_site_count": 5,
+          "call_sites": [
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.fetch_by_query(Supplier, query=query_dict, one_or_none=True)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+              "symbol": "domain.restaurant.RestaurantDomain.load",
+              "line_start": 53,
+              "line_end": 53,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.fetch_by_query(Supplier, query={})",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+              "symbol": "domain.restaurant.RestaurantDomain.load_all",
+              "line_start": 69,
+              "line_end": 69,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.fetch_by_query(Supplier, query={\"owner_user_id\": owner_user_id})",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+              "symbol": "domain.restaurant.RestaurantDomain.register",
+              "line_start": 88,
+              "line_end": 88,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.update_by_query( Supplier, query={\"id\": restaurant_id}, update_fields=update_fields, )",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+              "symbol": "domain.restaurant.RestaurantDomain.update_profile_information",
+              "line_start": 139,
+              "line_end": 143,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.delete_by_query(Supplier, query={\"id\": self.restaurant_id})",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+              "symbol": "domain.restaurant.RestaurantDomain.delete_restaurant",
+              "line_start": 153,
+              "line_end": 153,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+            "symbol": "domain.restaurant.RestaurantDomain.load",
+            "line_start": 53,
+            "line_end": 53,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.restaurant",
+          "type": "WRITES",
+          "target": "table.ftgo.restaurant.menu-item",
+          "role": "write",
+          "target_kind": "Table",
+          "persistence_library": "asyncpg_client",
+          "call_site_count": 1,
+          "call_sites": [
+            {
+              "operation": "add",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.insert(new_item)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/menu.py",
+              "symbol": "domain.menu.MenuDomain.add_item",
+              "line_start": 50,
+              "line_end": 50,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/restaurant/src/domain/menu.py",
+            "symbol": "domain.menu.MenuDomain.add_item",
+            "line_start": 50,
+            "line_end": 50,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.restaurant",
+          "type": "WRITES",
+          "target": "table.ftgo.restaurant.supplier-profile",
+          "role": "write",
+          "target_kind": "Table",
+          "persistence_library": "asyncpg_client",
+          "call_site_count": 1,
+          "call_sites": [
+            {
+              "operation": "add",
+              "resolution": "wrapper_argument",
+              "call": "DatabaseRepository.insert(new_profile)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+              "symbol": "domain.restaurant.RestaurantDomain.register",
+              "line_start": 105,
+              "line_end": 105,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/restaurant/src/domain/restaurant.py",
+            "symbol": "domain.restaurant.RestaurantDomain.register",
+            "line_start": 105,
+            "line_end": 105,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    },
+    {
+      "service": "service.ftgo.user",
+      "relation_count": 6,
+      "relations": [
+        {
+          "source": "service.ftgo.user",
+          "type": "READS",
+          "target": "table.ftgo.user.customer-address",
+          "role": "read",
+          "target_kind": "Table",
+          "persistence_library": "sqlalchemy",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+              "line_start": 55,
+              "line_end": 55,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 97,
+              "line_end": 97,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 121,
+              "line_end": 121,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+            "line_start": 55,
+            "line_end": 55,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.user",
+          "type": "READS",
+          "target": "table.ftgo.user.user-profile",
+          "role": "read",
+          "target_kind": "Table",
+          "persistence_library": "sqlalchemy",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+              "line_start": 55,
+              "line_end": 55,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 97,
+              "line_end": 97,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 121,
+              "line_end": 121,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+            "line_start": 55,
+            "line_end": 55,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.user",
+          "type": "READS",
+          "target": "table.ftgo.user.vehicle-info",
+          "role": "read",
+          "target_kind": "Table",
+          "persistence_library": "sqlalchemy",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+              "line_start": 55,
+              "line_end": 55,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 97,
+              "line_end": 97,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "select",
+              "resolution": "model_map_enumeration",
+              "call": "select(model_class)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 121,
+              "line_end": 121,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.fetch",
+            "line_start": 55,
+            "line_end": 55,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.user",
+          "type": "WRITES",
+          "target": "table.ftgo.user.customer-address",
+          "role": "write",
+          "target_kind": "Table",
+          "persistence_library": "asyncpg_client",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "add_all",
+              "resolution": "model_map_enumeration",
+              "call": "session.add_all(model_instances)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+              "line_start": 74,
+              "line_end": 74,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "add",
+              "resolution": "model_map_enumeration",
+              "call": "session.add(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 105,
+              "line_end": 105,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "delete",
+              "resolution": "model_map_enumeration",
+              "call": "session.delete(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 127,
+              "line_end": 127,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+            "line_start": 74,
+            "line_end": 74,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.user",
+          "type": "WRITES",
+          "target": "table.ftgo.user.user-profile",
+          "role": "write",
+          "target_kind": "Table",
+          "persistence_library": "asyncpg_client",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "add_all",
+              "resolution": "model_map_enumeration",
+              "call": "session.add_all(model_instances)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+              "line_start": 74,
+              "line_end": 74,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "add",
+              "resolution": "model_map_enumeration",
+              "call": "session.add(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 105,
+              "line_end": 105,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "delete",
+              "resolution": "model_map_enumeration",
+              "call": "session.delete(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 127,
+              "line_end": 127,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+            "line_start": 74,
+            "line_end": 74,
+            "evidence_type": "implemented"
+          }
+        },
+        {
+          "source": "service.ftgo.user",
+          "type": "WRITES",
+          "target": "table.ftgo.user.vehicle-info",
+          "role": "write",
+          "target_kind": "Table",
+          "persistence_library": "asyncpg_client",
+          "call_site_count": 3,
+          "call_sites": [
+            {
+              "operation": "add_all",
+              "resolution": "model_map_enumeration",
+              "call": "session.add_all(model_instances)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+              "line_start": 74,
+              "line_end": 74,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "add",
+              "resolution": "model_map_enumeration",
+              "call": "session.add(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.update",
+              "line_start": 105,
+              "line_end": 105,
+              "evidence_type": "implemented"
+            },
+            {
+              "operation": "delete",
+              "resolution": "model_map_enumeration",
+              "call": "session.delete(record)",
+              "repository": "ftgo",
+              "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+              "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+              "symbol": "data_access.repository.db_repository.DatabaseRepository.delete",
+              "line_start": 127,
+              "line_end": 127,
+              "evidence_type": "implemented"
+            }
+          ],
+          "source_evidence": {
+            "repository": "ftgo",
+            "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+            "path": "backend/microservices/user/src/data_access/repository/db_repository.py",
+            "symbol": "data_access.repository.db_repository.DatabaseRepository.insert",
+            "line_start": 74,
+            "line_end": 74,
+            "evidence_type": "implemented"
+          }
+        }
+      ]
+    }
+  ]
+}

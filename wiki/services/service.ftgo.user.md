@@ -353,6 +353,270 @@ relations:
   - backend/microservices/user/src/events.py:39
   handlers:
   - ProfileService.verify_account
+- type: READS
+  target: table.ftgo.user.customer-address
+  role: read
+  target_kind: Table
+  persistence_library: sqlalchemy
+  call_site_count: 3
+  call_sites:
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.fetch
+    line_start: 55
+    line_end: 55
+    evidence_type: implemented
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.update
+    line_start: 97
+    line_end: 97
+    evidence_type: implemented
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.delete
+    line_start: 121
+    line_end: 121
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/data_access/repository/db_repository.py
+  symbol: data_access.repository.db_repository.DatabaseRepository.fetch
+  line_start: 55
+  line_end: 55
+  evidence_type: implemented
+- type: READS
+  target: table.ftgo.user.user-profile
+  role: read
+  target_kind: Table
+  persistence_library: sqlalchemy
+  call_site_count: 3
+  call_sites:
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.fetch
+    line_start: 55
+    line_end: 55
+    evidence_type: implemented
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.update
+    line_start: 97
+    line_end: 97
+    evidence_type: implemented
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.delete
+    line_start: 121
+    line_end: 121
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/data_access/repository/db_repository.py
+  symbol: data_access.repository.db_repository.DatabaseRepository.fetch
+  line_start: 55
+  line_end: 55
+  evidence_type: implemented
+- type: READS
+  target: table.ftgo.user.vehicle-info
+  role: read
+  target_kind: Table
+  persistence_library: sqlalchemy
+  call_site_count: 3
+  call_sites:
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.fetch
+    line_start: 55
+    line_end: 55
+    evidence_type: implemented
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.update
+    line_start: 97
+    line_end: 97
+    evidence_type: implemented
+  - operation: select
+    resolution: model_map_enumeration
+    call: select(model_class)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.delete
+    line_start: 121
+    line_end: 121
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/data_access/repository/db_repository.py
+  symbol: data_access.repository.db_repository.DatabaseRepository.fetch
+  line_start: 55
+  line_end: 55
+  evidence_type: implemented
+- type: WRITES
+  target: table.ftgo.user.customer-address
+  role: write
+  target_kind: Table
+  persistence_library: asyncpg_client
+  call_site_count: 3
+  call_sites:
+  - operation: add_all
+    resolution: model_map_enumeration
+    call: session.add_all(model_instances)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.insert
+    line_start: 74
+    line_end: 74
+    evidence_type: implemented
+  - operation: add
+    resolution: model_map_enumeration
+    call: session.add(record)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.update
+    line_start: 105
+    line_end: 105
+    evidence_type: implemented
+  - operation: delete
+    resolution: model_map_enumeration
+    call: session.delete(record)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.delete
+    line_start: 127
+    line_end: 127
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/data_access/repository/db_repository.py
+  symbol: data_access.repository.db_repository.DatabaseRepository.insert
+  line_start: 74
+  line_end: 74
+  evidence_type: implemented
+- type: WRITES
+  target: table.ftgo.user.user-profile
+  role: write
+  target_kind: Table
+  persistence_library: asyncpg_client
+  call_site_count: 3
+  call_sites:
+  - operation: add_all
+    resolution: model_map_enumeration
+    call: session.add_all(model_instances)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.insert
+    line_start: 74
+    line_end: 74
+    evidence_type: implemented
+  - operation: add
+    resolution: model_map_enumeration
+    call: session.add(record)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.update
+    line_start: 105
+    line_end: 105
+    evidence_type: implemented
+  - operation: delete
+    resolution: model_map_enumeration
+    call: session.delete(record)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.delete
+    line_start: 127
+    line_end: 127
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/data_access/repository/db_repository.py
+  symbol: data_access.repository.db_repository.DatabaseRepository.insert
+  line_start: 74
+  line_end: 74
+  evidence_type: implemented
+- type: WRITES
+  target: table.ftgo.user.vehicle-info
+  role: write
+  target_kind: Table
+  persistence_library: asyncpg_client
+  call_site_count: 3
+  call_sites:
+  - operation: add_all
+    resolution: model_map_enumeration
+    call: session.add_all(model_instances)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.insert
+    line_start: 74
+    line_end: 74
+    evidence_type: implemented
+  - operation: add
+    resolution: model_map_enumeration
+    call: session.add(record)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.update
+    line_start: 105
+    line_end: 105
+    evidence_type: implemented
+  - operation: delete
+    resolution: model_map_enumeration
+    call: session.delete(record)
+    repository: ftgo
+    commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+    path: backend/microservices/user/src/data_access/repository/db_repository.py
+    symbol: data_access.repository.db_repository.DatabaseRepository.delete
+    line_start: 127
+    line_end: 127
+    evidence_type: implemented
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/microservices/user/src/data_access/repository/db_repository.py
+  symbol: data_access.repository.db_repository.DatabaseRepository.insert
+  line_start: 74
+  line_end: 74
+  evidence_type: implemented
 attributes:
   build_context: ./microservices/user
   build_dockerfile: Dockerfile
@@ -397,5 +661,5 @@ Candidate extracted from Docker Compose evidence in `ftgo` at commit `52b1fd1b5d
 
 ## Review notes
 
-This page is a candidate awaiting review. It is not canonical knowledge and secret values are redacted at extraction time.
+This page is approved canonical knowledge. Secret values are redacted at extraction time.
 
