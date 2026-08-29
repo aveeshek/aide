@@ -271,6 +271,36 @@ relations:
   line_start: 72
   line_end: 72
   evidence_type: implemented
+- type: PARTICIPATES_IN
+  target: flow.ftgo.gateway.get.location.get
+  completeness: partial
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/driver/location.py
+  symbol: application.routes.driver.location.get_location
+  line_start: 41
+  line_end: 62
+  evidence_type: implemented
+- type: PARTICIPATES_IN
+  target: flow.ftgo.gateway.get.status.get
+  completeness: partial
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/driver/online_status.py
+  symbol: application.routes.driver.online_status.get_status
+  line_start: 50
+  line_end: 66
+  evidence_type: implemented
+- type: PARTICIPATES_IN
+  target: flow.ftgo.gateway.post.location.submit
+  completeness: partial
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/driver/location.py
+  symbol: application.routes.driver.location.submit_location
+  line_start: 16
+  line_end: 38
+  evidence_type: implemented
 attributes:
   build_context: ./microservices/location
   build_dockerfile: Dockerfile

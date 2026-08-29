@@ -363,6 +363,46 @@ relations:
   line_start: 46
   line_end: 46
   evidence_type: implemented
+- type: PARTICIPATES_IN
+  target: flow.ftgo.gateway.post.order.confirm
+  completeness: resolved
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/order/order.py
+  symbol: application.routes.order.order.restaurant_confirm
+  line_start: 96
+  line_end: 118
+  evidence_type: implemented
+- type: PARTICIPATES_IN
+  target: flow.ftgo.gateway.post.order.create
+  completeness: resolved
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/order/order.py
+  symbol: application.routes.order.order.create_order
+  line_start: 44
+  line_end: 67
+  evidence_type: implemented
+- type: PARTICIPATES_IN
+  target: flow.ftgo.gateway.post.order.reject
+  completeness: resolved
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/order/order.py
+  symbol: application.routes.order.order.restaurant_reject
+  line_start: 121
+  line_end: 143
+  evidence_type: implemented
+- type: PARTICIPATES_IN
+  target: flow.ftgo.gateway.post.order.update
+  completeness: resolved
+  repository: ftgo
+  commit: 52b1fd1b5d808e32b7925e890f560445a8460e7a
+  path: backend/gateway/src/application/routes/order/order.py
+  symbol: application.routes.order.order.update_order
+  line_start: 70
+  line_end: 93
+  evidence_type: implemented
 attributes:
   build_context: ./microservices/order
   build_dockerfile: Dockerfile

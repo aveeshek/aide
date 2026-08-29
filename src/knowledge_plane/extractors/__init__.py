@@ -29,6 +29,7 @@ from . import compose as _compose
 from . import data_model as _data_model
 from . import fastapi as _fastapi
 from . import rabbitmq as _rabbitmq
+from . import user_flow as _user_flow
 from .compose import EXTRACTOR_KIND as COMPOSE_KIND
 from .compose import (
     ComposeExtraction,
@@ -71,6 +72,13 @@ from .rabbitmq import (
     RabbitExtraction,
     UnresolvedIdentifier,
     extract_rabbitmq,
+)
+from .user_flow import EXTRACTOR_KIND as USER_FLOW_KIND
+from .user_flow import (
+    FlowStepCandidate,
+    UserFlowCandidate,
+    UserFlowExtraction,
+    extract_user_flow,
 )
 
 
@@ -117,6 +125,14 @@ EXTRACTORS: dict[str, ExtractorSpec] = {
         candidate_subdirectories=_data_model.CANDIDATE_SUBDIRECTORIES,
         sidecars=_data_model.render_sidecars,
     ),
+    USER_FLOW_KIND: ExtractorSpec(
+        kind=USER_FLOW_KIND,
+        extract=extract_user_flow,
+        render_bundle=_user_flow.render_bundle,
+        summarize=_user_flow.summarize,
+        candidate_subdirectories=_user_flow.CANDIDATE_SUBDIRECTORIES,
+        sidecars=_user_flow.render_sidecars,
+    ),
 }
 
 # Extractor kinds available to `python -m knowledge_plane.extract --kind ...`.
@@ -129,6 +145,7 @@ __all__ = [
     "EXTRACTORS",
     "FASTAPI_KIND",
     "RABBITMQ_KIND",
+    "USER_FLOW_KIND",
     "AccessCandidate",
     "ApiCandidate",
     "BrokerInteraction",
@@ -144,6 +161,7 @@ __all__ = [
     "EventCandidate",
     "ExtractorSpec",
     "FastApiExtraction",
+    "FlowStepCandidate",
     "IdentityCollision",
     "MigrationCandidate",
     "OntologyGap",
@@ -157,8 +175,11 @@ __all__ = [
     "UnresolvedIdentifier",
     "UnresolvedRoute",
     "UnresolvedSchema",
+    "UserFlowCandidate",
+    "UserFlowExtraction",
     "extract_compose",
     "extract_data_model",
     "extract_fastapi",
     "extract_rabbitmq",
+    "extract_user_flow",
 ]
