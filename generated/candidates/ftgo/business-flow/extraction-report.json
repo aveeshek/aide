@@ -1,0 +1,3612 @@
+{
+  "version": 1,
+  "extractor": "business-flow",
+  "repository": "ftgo",
+  "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+  "commit_verified": true,
+  "evidence_type": "implemented",
+  "analysis": "vue-sfc/static",
+  "ontology_kinds_introduced": [
+    "BusinessFlow"
+  ],
+  "ontology_kinds_reused": [
+    "FlowStep",
+    "UserFlow"
+  ],
+  "relationship_types_introduced": [],
+  "relationship_types_used": [
+    "CONTAINS",
+    "DERIVED_FROM",
+    "PRECEDES"
+  ],
+  "candidate_subdirectories": [
+    "business-flows",
+    "business-steps"
+  ],
+  "api_prefix": {
+    "value": "/api/v1",
+    "resolved": true,
+    "reason": null,
+    "source_refs": [
+      {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/gateway/src/config/service.py",
+        "symbol": "ServiceConfig.__init__:API_PREFIX",
+        "line_start": 18,
+        "line_end": 18,
+        "evidence_type": "implemented"
+      },
+      {
+        "repository": "ftgo",
+        "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+        "path": "backend/gateway/src/main.py",
+        "symbol": "app.include_router",
+        "line_start": 30,
+        "line_end": 30,
+        "evidence_type": "implemented"
+      }
+    ]
+  },
+  "source_files_scanned": [
+    "backend/gateway/src/config/service.py",
+    "backend/gateway/src/main.py",
+    "ui/src/components/ChangeRestaurantInfo.vue",
+    "ui/src/components/ChangeVehicleInfo.vue",
+    "ui/src/components/CustomerChangeInfo.vue",
+    "ui/src/components/CustomerMainPage.vue",
+    "ui/src/components/DeliveryMainPage.vue",
+    "ui/src/components/MenuPage.vue",
+    "ui/src/components/RegisterRestaurantPage.vue",
+    "ui/src/components/RegisterVehiclePage.vue",
+    "ui/src/components/SignInComp.vue",
+    "ui/src/components/SignUpComp.vue",
+    "ui/src/components/SupplierMainPage.vue",
+    "ui/src/components/VerifyAccountPage.vue",
+    "ui/src/router/index.js",
+    "ui/src/store/index.js",
+    "ui/src/views/ChangeRestaurantInfo.vue",
+    "ui/src/views/ChangeVehicleInfo.vue",
+    "ui/src/views/CustomerChangeInfo.vue",
+    "ui/src/views/CustomerMainPage.vue",
+    "ui/src/views/DeliveryMainPage.vue",
+    "ui/src/views/MenuPage.vue",
+    "ui/src/views/RegisterRestaurantPage.vue",
+    "ui/src/views/RegisterVehiclePage.vue",
+    "ui/src/views/SignIn.vue",
+    "ui/src/views/SignUp.vue",
+    "ui/src/views/SupplierMainPage.vue",
+    "ui/src/views/VerifyAccountPage.vue"
+  ],
+  "routes_scanned": [
+    {
+      "path": "/",
+      "name": "SignIn",
+      "view": "ui/src/views/SignIn.vue"
+    },
+    {
+      "path": "/ChangeRestaurantInfo",
+      "name": "ChangeRestaurantInfo",
+      "view": "ui/src/views/ChangeRestaurantInfo.vue"
+    },
+    {
+      "path": "/ChangeVehicleInfo",
+      "name": "ChangeVehicleInfo",
+      "view": "ui/src/views/ChangeVehicleInfo.vue"
+    },
+    {
+      "path": "/CustomerChangeInfo",
+      "name": "CustomerChangeInfo",
+      "view": "ui/src/views/CustomerChangeInfo.vue"
+    },
+    {
+      "path": "/CustomerMainPage",
+      "name": "CustomerMainPage",
+      "view": "ui/src/views/CustomerMainPage.vue"
+    },
+    {
+      "path": "/DeliveryMainPage",
+      "name": "DeliveryMainPage",
+      "view": "ui/src/views/DeliveryMainPage.vue"
+    },
+    {
+      "path": "/MenuPage",
+      "name": "MenuPage",
+      "view": "ui/src/views/MenuPage.vue"
+    },
+    {
+      "path": "/RegisterRestaurantPage",
+      "name": "RegisterRestaurantPage",
+      "view": "ui/src/views/RegisterRestaurantPage.vue"
+    },
+    {
+      "path": "/RegisterVehiclePage",
+      "name": "RegisterVehiclePage",
+      "view": "ui/src/views/RegisterVehiclePage.vue"
+    },
+    {
+      "path": "/SignUp",
+      "name": "SignUp",
+      "view": "ui/src/views/SignUp.vue"
+    },
+    {
+      "path": "/SupplierMainPage",
+      "name": "SupplierMainPage",
+      "view": "ui/src/views/SupplierMainPage.vue"
+    },
+    {
+      "path": "/VerifyAccount",
+      "name": "VerifyAccount",
+      "view": "ui/src/views/VerifyAccountPage.vue"
+    }
+  ],
+  "views_scanned": [
+    "ui/src/views/ChangeRestaurantInfo.vue",
+    "ui/src/views/ChangeVehicleInfo.vue",
+    "ui/src/views/CustomerChangeInfo.vue",
+    "ui/src/views/CustomerMainPage.vue",
+    "ui/src/views/DeliveryMainPage.vue",
+    "ui/src/views/MenuPage.vue",
+    "ui/src/views/RegisterRestaurantPage.vue",
+    "ui/src/views/RegisterVehiclePage.vue",
+    "ui/src/views/SignIn.vue",
+    "ui/src/views/SignUp.vue",
+    "ui/src/views/SupplierMainPage.vue",
+    "ui/src/views/VerifyAccountPage.vue"
+  ],
+  "components_scanned": [
+    "ui/src/components/ChangeRestaurantInfo.vue",
+    "ui/src/components/ChangeVehicleInfo.vue",
+    "ui/src/components/CustomerChangeInfo.vue",
+    "ui/src/components/CustomerMainPage.vue",
+    "ui/src/components/DeliveryMainPage.vue",
+    "ui/src/components/MenuPage.vue",
+    "ui/src/components/RegisterRestaurantPage.vue",
+    "ui/src/components/RegisterVehiclePage.vue",
+    "ui/src/components/SignInComp.vue",
+    "ui/src/components/SignUpComp.vue",
+    "ui/src/components/SupplierMainPage.vue",
+    "ui/src/components/VerifyAccountPage.vue"
+  ],
+  "canonical_user_flows_available": 43,
+  "api_call_sites": [
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.updateRestaurant",
+      "line_start": 148,
+      "line_end": 152,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/restaurant/update",
+      "normalized_path": "/restaurant/update",
+      "user_flow": "flow.ftgo.gateway.put.restaurant.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.restaurant.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.fetchAndStoreRestaurantInfo",
+      "line_start": 174,
+      "line_end": 178,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_supplier_restaurant_info",
+      "normalized_path": "/restaurant/get_supplier_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.deleteRestaurant",
+      "line_start": 191,
+      "line_end": 194,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/restaurant/delete",
+      "normalized_path": "/restaurant/delete",
+      "user_flow": "flow.ftgo.gateway.delete.restaurant.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.restaurant.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.deleteAccount",
+      "line_start": 215,
+      "line_end": 217,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/profile/delete",
+      "normalized_path": "/profile/delete",
+      "user_flow": "flow.ftgo.gateway.delete.profile.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.profile.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.updateUser",
+      "line_start": 93,
+      "line_end": 97,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/profile/update",
+      "normalized_path": "/profile/update",
+      "user_flow": "flow.ftgo.gateway.put.profile.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.profile.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.fetchUserInfo",
+      "line_start": 119,
+      "line_end": 122,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/profile/user_info",
+      "normalized_path": "/profile/user_info",
+      "user_flow": "flow.ftgo.gateway.get.profile.user-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.profile.user-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.registerVehicle",
+      "line_start": 135,
+      "line_end": 139,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/vehicle/register",
+      "normalized_path": "/vehicle/register",
+      "user_flow": "flow.ftgo.gateway.post.vehicle.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.vehicle.register"
+      ],
+      "reachable": false,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.fetchAndStoreVehicleInfo",
+      "line_start": 162,
+      "line_end": 166,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/vehicle/get_info",
+      "normalized_path": "/vehicle/get_info",
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.vehicle.get-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.deleteAccount",
+      "line_start": 190,
+      "line_end": 193,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/profile/delete",
+      "normalized_path": "/profile/delete",
+      "user_flow": "flow.ftgo.gateway.delete.profile.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.profile.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.deleteVehicle",
+      "line_start": 200,
+      "line_end": 203,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/vehicle/delete",
+      "normalized_path": "/vehicle/delete",
+      "user_flow": "flow.ftgo.gateway.delete.vehicle.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.vehicle.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.updateUser",
+      "line_start": 158,
+      "line_end": 162,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/profile/update",
+      "normalized_path": "/profile/update",
+      "user_flow": "flow.ftgo.gateway.put.profile.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.profile.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.fetchUserInfo",
+      "line_start": 184,
+      "line_end": 187,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/profile/user_info",
+      "normalized_path": "/profile/user_info",
+      "user_flow": "flow.ftgo.gateway.get.profile.user-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.profile.user-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.fetchAddresses",
+      "line_start": 195,
+      "line_end": 198,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/address/get_all_info",
+      "normalized_path": "/address/get_all_info",
+      "user_flow": "flow.ftgo.gateway.get.address.get-all-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.address.get-all-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.addAddress",
+      "line_start": 206,
+      "line_end": 210,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/address/add",
+      "normalized_path": "/address/add",
+      "user_flow": "flow.ftgo.gateway.post.address.add",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.address.add"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.deleteAddress",
+      "line_start": 227,
+      "line_end": 230,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/address/delete",
+      "normalized_path": "/address/delete",
+      "user_flow": "flow.ftgo.gateway.delete.address.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.address.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.setPreferredAddress",
+      "line_start": 238,
+      "line_end": 242,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/address/set-preferred",
+      "normalized_path": "/address/set-preferred",
+      "user_flow": "flow.ftgo.gateway.post.address.set-preferred",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.address.set-preferred"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.deleteAccount",
+      "line_start": 261,
+      "line_end": 264,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/profile/delete",
+      "normalized_path": "/profile/delete",
+      "user_flow": "flow.ftgo.gateway.delete.profile.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.profile.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.logout",
+      "line_start": 70,
+      "line_end": 74,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/profile/logout",
+      "normalized_path": "/profile/logout",
+      "user_flow": "flow.ftgo.gateway.post.profile.logout",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.profile.logout"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.fetchRestaurants",
+      "line_start": 86,
+      "line_end": 91,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_all_restaurant_info",
+      "normalized_path": "/restaurant/get_all_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/status/get",
+      "normalized_path": "/status/get",
+      "user_flow": "flow.ftgo.gateway.get.status.get",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.setDriverOnlineStatus",
+      "line_start": 151,
+      "line_end": 155,
+      "http_method": "POST",
+      "request": "Vue.axios.post(url, {}, { headers: { Authorization: `Bearer ${this.token}` } })",
+      "normalized_path": null,
+      "user_flow": null,
+      "candidate_user_flows": [],
+      "reachable": true,
+      "reason": "URL variable 'url' is a conditional expression with 2 literal outcomes",
+      "conditional_requests": [
+        {
+          "request": "http://localhost:8000/api/v1/status/offline",
+          "normalized_path": "/status/offline",
+          "user_flow": null,
+          "reason": "no approved Pass-5 UserFlow declares POST /status/offline"
+        },
+        {
+          "request": "http://localhost:8000/api/v1/status/online",
+          "normalized_path": "/status/online",
+          "user_flow": null,
+          "reason": "no approved Pass-5 UserFlow declares POST /status/online"
+        }
+      ]
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.submitLocation",
+      "line_start": 177,
+      "line_end": 181,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/location/submit",
+      "normalized_path": "/location/submit",
+      "user_flow": "flow.ftgo.gateway.post.location.submit",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.location.submit"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.logout",
+      "line_start": 185,
+      "line_end": 189,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/profile/logout",
+      "normalized_path": "/profile/logout",
+      "user_flow": "flow.ftgo.gateway.post.profile.logout",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.profile.logout"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/MenuPage.vue",
+      "symbol": "MenuPage.fetchMenu",
+      "line_start": 99,
+      "line_end": 105,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/menu/get_all_menu_item",
+      "normalized_path": "/menu/get_all_menu_item",
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/MenuPage.vue",
+      "symbol": "MenuPage.submitOrder",
+      "line_start": 132,
+      "line_end": 138,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/order/create",
+      "normalized_path": "/order/create",
+      "user_flow": "flow.ftgo.gateway.post.order.create",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.order.create"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.registerRestaurant",
+      "line_start": 135,
+      "line_end": 139,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/restaurant/register",
+      "normalized_path": "/restaurant/register",
+      "user_flow": "flow.ftgo.gateway.post.restaurant.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.restaurant.register"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.fetchAndStoreRestaurantInfo",
+      "line_start": 163,
+      "line_end": 167,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_supplier_restaurant_info",
+      "normalized_path": "/restaurant/get_supplier_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.registerVehicle",
+      "line_start": 84,
+      "line_end": 88,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/vehicle/register",
+      "normalized_path": "/vehicle/register",
+      "user_flow": "flow.ftgo.gateway.post.vehicle.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.vehicle.register"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.fetchAndStoreVehicleInfo",
+      "line_start": 111,
+      "line_end": 115,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/vehicle/get_info",
+      "normalized_path": "/vehicle/get_info",
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.vehicle.get-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/auth/login",
+      "normalized_path": "/auth/login",
+      "user_flow": "flow.ftgo.gateway.post.auth.login",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.auth.login"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreRestaurantInfo",
+      "line_start": 140,
+      "line_end": 144,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_supplier_restaurant_info",
+      "normalized_path": "/restaurant/get_supplier_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreVehicleInfo",
+      "line_start": 157,
+      "line_end": 161,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/vehicle/get_info",
+      "normalized_path": "/vehicle/get_info",
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.vehicle.get-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignUpComp.vue",
+      "symbol": "SignUpComp.signup",
+      "line_start": 113,
+      "line_end": 113,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/auth/register",
+      "normalized_path": "/auth/register",
+      "user_flow": "flow.ftgo.gateway.post.auth.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.auth.register"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/menu/get_all_menu_item",
+      "normalized_path": "/menu/get_all_menu_item",
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.addFood",
+      "line_start": 148,
+      "line_end": 152,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/menu/add",
+      "normalized_path": "/menu/add",
+      "user_flow": "flow.ftgo.gateway.post.menu.add",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.menu.add"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.updateFood",
+      "line_start": 163,
+      "line_end": 167,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/menu/update",
+      "normalized_path": "/menu/update",
+      "user_flow": "flow.ftgo.gateway.put.menu.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.menu.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.deleteItem",
+      "line_start": 189,
+      "line_end": 192,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/menu/delete",
+      "normalized_path": "/menu/delete",
+      "user_flow": "flow.ftgo.gateway.delete.menu.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.menu.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.logout",
+      "line_start": 215,
+      "line_end": 219,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/profile/logout",
+      "normalized_path": "/profile/logout",
+      "user_flow": "flow.ftgo.gateway.post.profile.logout",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.profile.logout"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/VerifyAccountPage.vue",
+      "symbol": "VerifyAccountPage.verify",
+      "line_start": 75,
+      "line_end": 75,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/auth/verify",
+      "normalized_path": "/auth/verify",
+      "user_flow": "flow.ftgo.gateway.post.auth.verify",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.auth.verify"
+      ],
+      "reachable": true,
+      "reason": null
+    }
+  ],
+  "api_calls_mapped": [
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.updateRestaurant",
+      "line_start": 148,
+      "line_end": 152,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/restaurant/update",
+      "normalized_path": "/restaurant/update",
+      "user_flow": "flow.ftgo.gateway.put.restaurant.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.restaurant.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.fetchAndStoreRestaurantInfo",
+      "line_start": 174,
+      "line_end": 178,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_supplier_restaurant_info",
+      "normalized_path": "/restaurant/get_supplier_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.deleteRestaurant",
+      "line_start": 191,
+      "line_end": 194,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/restaurant/delete",
+      "normalized_path": "/restaurant/delete",
+      "user_flow": "flow.ftgo.gateway.delete.restaurant.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.restaurant.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.deleteAccount",
+      "line_start": 215,
+      "line_end": 217,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/profile/delete",
+      "normalized_path": "/profile/delete",
+      "user_flow": "flow.ftgo.gateway.delete.profile.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.profile.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.updateUser",
+      "line_start": 93,
+      "line_end": 97,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/profile/update",
+      "normalized_path": "/profile/update",
+      "user_flow": "flow.ftgo.gateway.put.profile.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.profile.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.fetchUserInfo",
+      "line_start": 119,
+      "line_end": 122,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/profile/user_info",
+      "normalized_path": "/profile/user_info",
+      "user_flow": "flow.ftgo.gateway.get.profile.user-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.profile.user-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.registerVehicle",
+      "line_start": 135,
+      "line_end": 139,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/vehicle/register",
+      "normalized_path": "/vehicle/register",
+      "user_flow": "flow.ftgo.gateway.post.vehicle.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.vehicle.register"
+      ],
+      "reachable": false,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.fetchAndStoreVehicleInfo",
+      "line_start": 162,
+      "line_end": 166,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/vehicle/get_info",
+      "normalized_path": "/vehicle/get_info",
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.vehicle.get-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.deleteAccount",
+      "line_start": 190,
+      "line_end": 193,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/profile/delete",
+      "normalized_path": "/profile/delete",
+      "user_flow": "flow.ftgo.gateway.delete.profile.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.profile.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/ChangeVehicleInfo.vue",
+      "symbol": "ChangeVehicleInfo.deleteVehicle",
+      "line_start": 200,
+      "line_end": 203,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/vehicle/delete",
+      "normalized_path": "/vehicle/delete",
+      "user_flow": "flow.ftgo.gateway.delete.vehicle.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.vehicle.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.updateUser",
+      "line_start": 158,
+      "line_end": 162,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/profile/update",
+      "normalized_path": "/profile/update",
+      "user_flow": "flow.ftgo.gateway.put.profile.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.profile.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.fetchUserInfo",
+      "line_start": 184,
+      "line_end": 187,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/profile/user_info",
+      "normalized_path": "/profile/user_info",
+      "user_flow": "flow.ftgo.gateway.get.profile.user-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.profile.user-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.fetchAddresses",
+      "line_start": 195,
+      "line_end": 198,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/address/get_all_info",
+      "normalized_path": "/address/get_all_info",
+      "user_flow": "flow.ftgo.gateway.get.address.get-all-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.address.get-all-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.addAddress",
+      "line_start": 206,
+      "line_end": 210,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/address/add",
+      "normalized_path": "/address/add",
+      "user_flow": "flow.ftgo.gateway.post.address.add",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.address.add"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.deleteAddress",
+      "line_start": 227,
+      "line_end": 230,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/address/delete",
+      "normalized_path": "/address/delete",
+      "user_flow": "flow.ftgo.gateway.delete.address.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.address.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.setPreferredAddress",
+      "line_start": 238,
+      "line_end": 242,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/address/set-preferred",
+      "normalized_path": "/address/set-preferred",
+      "user_flow": "flow.ftgo.gateway.post.address.set-preferred",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.address.set-preferred"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerChangeInfo.vue",
+      "symbol": "CustomerChangeInfo.deleteAccount",
+      "line_start": 261,
+      "line_end": 264,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/profile/delete",
+      "normalized_path": "/profile/delete",
+      "user_flow": "flow.ftgo.gateway.delete.profile.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.profile.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.logout",
+      "line_start": 70,
+      "line_end": 74,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/profile/logout",
+      "normalized_path": "/profile/logout",
+      "user_flow": "flow.ftgo.gateway.post.profile.logout",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.profile.logout"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.fetchRestaurants",
+      "line_start": 86,
+      "line_end": 91,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_all_restaurant_info",
+      "normalized_path": "/restaurant/get_all_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/status/get",
+      "normalized_path": "/status/get",
+      "user_flow": "flow.ftgo.gateway.get.status.get",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.submitLocation",
+      "line_start": 177,
+      "line_end": 181,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/location/submit",
+      "normalized_path": "/location/submit",
+      "user_flow": "flow.ftgo.gateway.post.location.submit",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.location.submit"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.logout",
+      "line_start": 185,
+      "line_end": 189,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/profile/logout",
+      "normalized_path": "/profile/logout",
+      "user_flow": "flow.ftgo.gateway.post.profile.logout",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.profile.logout"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/MenuPage.vue",
+      "symbol": "MenuPage.fetchMenu",
+      "line_start": 99,
+      "line_end": 105,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/menu/get_all_menu_item",
+      "normalized_path": "/menu/get_all_menu_item",
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/MenuPage.vue",
+      "symbol": "MenuPage.submitOrder",
+      "line_start": 132,
+      "line_end": 138,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/order/create",
+      "normalized_path": "/order/create",
+      "user_flow": "flow.ftgo.gateway.post.order.create",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.order.create"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.registerRestaurant",
+      "line_start": 135,
+      "line_end": 139,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/restaurant/register",
+      "normalized_path": "/restaurant/register",
+      "user_flow": "flow.ftgo.gateway.post.restaurant.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.restaurant.register"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.fetchAndStoreRestaurantInfo",
+      "line_start": 163,
+      "line_end": 167,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_supplier_restaurant_info",
+      "normalized_path": "/restaurant/get_supplier_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.registerVehicle",
+      "line_start": 84,
+      "line_end": 88,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/vehicle/register",
+      "normalized_path": "/vehicle/register",
+      "user_flow": "flow.ftgo.gateway.post.vehicle.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.vehicle.register"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.fetchAndStoreVehicleInfo",
+      "line_start": 111,
+      "line_end": 115,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/vehicle/get_info",
+      "normalized_path": "/vehicle/get_info",
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.vehicle.get-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/auth/login",
+      "normalized_path": "/auth/login",
+      "user_flow": "flow.ftgo.gateway.post.auth.login",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.auth.login"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreRestaurantInfo",
+      "line_start": 140,
+      "line_end": 144,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/restaurant/get_supplier_restaurant_info",
+      "normalized_path": "/restaurant/get_supplier_restaurant_info",
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreVehicleInfo",
+      "line_start": 157,
+      "line_end": 161,
+      "http_method": "GET",
+      "request": "http://localhost:8000/api/v1/vehicle/get_info",
+      "normalized_path": "/vehicle/get_info",
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.get.vehicle.get-info"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SignUpComp.vue",
+      "symbol": "SignUpComp.signup",
+      "line_start": 113,
+      "line_end": 113,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/auth/register",
+      "normalized_path": "/auth/register",
+      "user_flow": "flow.ftgo.gateway.post.auth.register",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.auth.register"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/menu/get_all_menu_item",
+      "normalized_path": "/menu/get_all_menu_item",
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.addFood",
+      "line_start": 148,
+      "line_end": 152,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/menu/add",
+      "normalized_path": "/menu/add",
+      "user_flow": "flow.ftgo.gateway.post.menu.add",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.menu.add"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.updateFood",
+      "line_start": 163,
+      "line_end": 167,
+      "http_method": "PUT",
+      "request": "http://localhost:8000/api/v1/menu/update",
+      "normalized_path": "/menu/update",
+      "user_flow": "flow.ftgo.gateway.put.menu.update",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.put.menu.update"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.deleteItem",
+      "line_start": 189,
+      "line_end": 192,
+      "http_method": "DELETE",
+      "request": "http://localhost:8000/api/v1/menu/delete",
+      "normalized_path": "/menu/delete",
+      "user_flow": "flow.ftgo.gateway.delete.menu.delete",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.delete.menu.delete"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.logout",
+      "line_start": 215,
+      "line_end": 219,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/profile/logout",
+      "normalized_path": "/profile/logout",
+      "user_flow": "flow.ftgo.gateway.post.profile.logout",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.profile.logout"
+      ],
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "path": "ui/src/components/VerifyAccountPage.vue",
+      "symbol": "VerifyAccountPage.verify",
+      "line_start": 75,
+      "line_end": 75,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/auth/verify",
+      "normalized_path": "/auth/verify",
+      "user_flow": "flow.ftgo.gateway.post.auth.verify",
+      "candidate_user_flows": [
+        "flow.ftgo.gateway.post.auth.verify"
+      ],
+      "reachable": true,
+      "reason": null
+    }
+  ],
+  "api_calls_unresolved": [
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.setDriverOnlineStatus",
+      "line_start": 151,
+      "line_end": 155,
+      "http_method": "POST",
+      "request": "Vue.axios.post(url, {}, { headers: { Authorization: `Bearer ${this.token}` } })",
+      "normalized_path": null,
+      "user_flow": null,
+      "candidate_user_flows": [],
+      "reachable": true,
+      "reason": "URL variable 'url' is a conditional expression with 2 literal outcomes",
+      "conditional_requests": [
+        {
+          "request": "http://localhost:8000/api/v1/status/offline",
+          "normalized_path": "/status/offline",
+          "user_flow": null,
+          "reason": "no approved Pass-5 UserFlow declares POST /status/offline"
+        },
+        {
+          "request": "http://localhost:8000/api/v1/status/online",
+          "normalized_path": "/status/online",
+          "user_flow": null,
+          "reason": "no approved Pass-5 UserFlow declares POST /status/online"
+        }
+      ]
+    }
+  ],
+  "business_flows": [
+    {
+      "id": "business-flow.ftgo.ui.account-registration-verification",
+      "title": "Account registration and verification",
+      "outcome": "resolved",
+      "actor": null,
+      "actors": [
+        "customer",
+        "driver",
+        "restaurant_admin"
+      ],
+      "actor_resolution": "parameterized_by_user_selected_role",
+      "entry_component": "ui/src/components/SignUpComp.vue",
+      "entry_handler": "signup",
+      "entry_trigger": "user_action",
+      "branch_selector": {},
+      "user_flows": [
+        "flow.ftgo.gateway.post.auth.register",
+        "flow.ftgo.gateway.post.auth.verify"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.post.auth.register",
+        "flow.ftgo.gateway.post.auth.verify"
+      ],
+      "terminated_because": "route 'SignIn' offers only the user action 'signin', which consumes no state this journey wrote; arriving on the page does not prove a further request",
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SignUpComp.vue",
+          "symbol": "SignUpComp.signup",
+          "line_start": 113,
+          "line_end": 113,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/VerifyAccountPage.vue",
+          "symbol": "VerifyAccountPage.verify",
+          "line_start": 75,
+          "line_end": 75,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.customer-login-restaurant-browse",
+      "title": "Customer login and restaurant browsing",
+      "outcome": "resolved",
+      "actor": "customer",
+      "actors": [],
+      "actor_resolution": "role_branch",
+      "entry_component": "ui/src/components/SignInComp.vue",
+      "entry_handler": "signin",
+      "entry_trigger": "user_action",
+      "branch_selector": {
+        "this.userRole": "customer"
+      },
+      "user_flows": [
+        "flow.ftgo.gateway.post.auth.login",
+        "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.post.auth.login",
+        "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info"
+      ],
+      "terminated_because": null,
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SignInComp.vue",
+          "symbol": "SignInComp.signin",
+          "line_start": 86,
+          "line_end": 86,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/CustomerMainPage.vue",
+          "symbol": "CustomerMainPage.fetchRestaurants",
+          "line_start": 86,
+          "line_end": 91,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.driver-login-bootstrap",
+      "title": "Driver login bootstrap",
+      "outcome": "resolved",
+      "actor": "driver",
+      "actors": [],
+      "actor_resolution": "role_branch",
+      "entry_component": "ui/src/components/SignInComp.vue",
+      "entry_handler": "signin",
+      "entry_trigger": "user_action",
+      "branch_selector": {
+        "this.userRole": "driver"
+      },
+      "user_flows": [
+        "flow.ftgo.gateway.post.auth.login",
+        "flow.ftgo.gateway.get.vehicle.get-info",
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.post.auth.login",
+        "flow.ftgo.gateway.get.vehicle.get-info",
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "terminated_because": "no ordering evidence between flow.ftgo.gateway.get.status.get and flow.ftgo.gateway.get.status.get: the preceding operation is neither awaited nor chained through a resolved promise",
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SignInComp.vue",
+          "symbol": "SignInComp.signin",
+          "line_start": 86,
+          "line_end": 86,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SignInComp.vue",
+          "symbol": "SignInComp.fetchAndStoreVehicleInfo",
+          "line_start": 157,
+          "line_end": 161,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/DeliveryMainPage.vue",
+          "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+          "line_start": 132,
+          "line_end": 136,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+      "title": "Restaurant admin login bootstrap",
+      "outcome": "resolved",
+      "actor": "restaurant_admin",
+      "actors": [],
+      "actor_resolution": "role_branch",
+      "entry_component": "ui/src/components/SignInComp.vue",
+      "entry_handler": "signin",
+      "entry_trigger": "user_action",
+      "branch_selector": {
+        "this.userRole": "restaurant_admin"
+      },
+      "user_flows": [
+        "flow.ftgo.gateway.post.auth.login",
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.post.auth.login",
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "terminated_because": null,
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SignInComp.vue",
+          "symbol": "SignInComp.signin",
+          "line_start": 86,
+          "line_end": 86,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SignInComp.vue",
+          "symbol": "SignInComp.fetchAndStoreRestaurantInfo",
+          "line_start": 140,
+          "line_end": 144,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.fetchMenu",
+          "line_start": 131,
+          "line_end": 137,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.driver-vehicle-onboarding",
+      "title": "Driver vehicle onboarding",
+      "outcome": "resolved",
+      "actor": "driver",
+      "actors": [],
+      "actor_resolution": "role_branch_navigation_region",
+      "entry_component": "ui/src/components/RegisterVehiclePage.vue",
+      "entry_handler": "registerVehicle",
+      "entry_trigger": "user_action",
+      "branch_selector": {},
+      "user_flows": [
+        "flow.ftgo.gateway.post.vehicle.register",
+        "flow.ftgo.gateway.get.vehicle.get-info",
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.post.vehicle.register",
+        "flow.ftgo.gateway.get.vehicle.get-info",
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "terminated_because": "no ordering evidence between flow.ftgo.gateway.get.status.get and flow.ftgo.gateway.get.status.get: the preceding operation is neither awaited nor chained through a resolved promise",
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/RegisterVehiclePage.vue",
+          "symbol": "RegisterVehiclePage.registerVehicle",
+          "line_start": 84,
+          "line_end": 88,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/RegisterVehiclePage.vue",
+          "symbol": "RegisterVehiclePage.fetchAndStoreVehicleInfo",
+          "line_start": 111,
+          "line_end": 115,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/DeliveryMainPage.vue",
+          "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+          "line_start": 132,
+          "line_end": 136,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.driver-active-location-refresh",
+      "title": "Driver active location refresh",
+      "outcome": "resolved",
+      "actor": "driver",
+      "actors": [],
+      "actor_resolution": "role_branch_navigation_region",
+      "entry_component": "ui/src/components/DeliveryMainPage.vue",
+      "entry_handler": "startRefresh",
+      "entry_trigger": "lifecycle",
+      "branch_selector": {},
+      "user_flows": [
+        "flow.ftgo.gateway.get.status.get",
+        "flow.ftgo.gateway.post.location.submit"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.get.status.get",
+        "flow.ftgo.gateway.post.location.submit"
+      ],
+      "terminated_because": null,
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/DeliveryMainPage.vue",
+          "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+          "line_start": 132,
+          "line_end": 136,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/DeliveryMainPage.vue",
+          "symbol": "DeliveryMainPage.submitLocation",
+          "line_start": 177,
+          "line_end": 181,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.restaurant-onboarding",
+      "title": "Restaurant onboarding",
+      "outcome": "resolved",
+      "actor": "restaurant_admin",
+      "actors": [],
+      "actor_resolution": "role_branch_navigation_region",
+      "entry_component": "ui/src/components/RegisterRestaurantPage.vue",
+      "entry_handler": "registerRestaurant",
+      "entry_trigger": "user_action",
+      "branch_selector": {},
+      "user_flows": [
+        "flow.ftgo.gateway.post.restaurant.register",
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.post.restaurant.register",
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "terminated_because": null,
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/RegisterRestaurantPage.vue",
+          "symbol": "RegisterRestaurantPage.registerRestaurant",
+          "line_start": 135,
+          "line_end": 139,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/RegisterRestaurantPage.vue",
+          "symbol": "RegisterRestaurantPage.fetchAndStoreRestaurantInfo",
+          "line_start": 163,
+          "line_end": 167,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.fetchMenu",
+          "line_start": 131,
+          "line_end": 137,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.restaurant-menu-add-refresh",
+      "title": "Restaurant menu item add and refresh",
+      "outcome": "resolved",
+      "actor": "restaurant_admin",
+      "actors": [],
+      "actor_resolution": "role_branch_navigation_region",
+      "entry_component": "ui/src/components/SupplierMainPage.vue",
+      "entry_handler": "addFood",
+      "entry_trigger": "user_action",
+      "branch_selector": {},
+      "user_flows": [
+        "flow.ftgo.gateway.post.menu.add",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.post.menu.add",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "terminated_because": null,
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.addFood",
+          "line_start": 148,
+          "line_end": 152,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.fetchMenu",
+          "line_start": 131,
+          "line_end": 137,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.restaurant-menu-update-refresh",
+      "title": "Restaurant menu item update and refresh",
+      "outcome": "resolved",
+      "actor": "restaurant_admin",
+      "actors": [],
+      "actor_resolution": "role_branch_navigation_region",
+      "entry_component": "ui/src/components/SupplierMainPage.vue",
+      "entry_handler": "updateFood",
+      "entry_trigger": "user_action",
+      "branch_selector": {},
+      "user_flows": [
+        "flow.ftgo.gateway.put.menu.update",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.put.menu.update",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "terminated_because": null,
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.updateFood",
+          "line_start": 163,
+          "line_end": 167,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.fetchMenu",
+          "line_start": 131,
+          "line_end": 137,
+          "evidence_type": "implemented"
+        }
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.restaurant-menu-delete-refresh",
+      "title": "Restaurant menu item delete and refresh",
+      "outcome": "resolved",
+      "actor": "restaurant_admin",
+      "actors": [],
+      "actor_resolution": "role_branch_navigation_region",
+      "entry_component": "ui/src/components/SupplierMainPage.vue",
+      "entry_handler": "confirmDeleteItem",
+      "entry_trigger": "user_action",
+      "branch_selector": {},
+      "user_flows": [
+        "flow.ftgo.gateway.delete.menu.delete",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "expected_user_flows": [
+        "flow.ftgo.gateway.delete.menu.delete",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "terminated_because": null,
+      "source_refs": [
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.deleteItem",
+          "line_start": 189,
+          "line_end": 192,
+          "evidence_type": "implemented"
+        },
+        {
+          "repository": "ftgo",
+          "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+          "path": "ui/src/components/SupplierMainPage.vue",
+          "symbol": "SupplierMainPage.fetchMenu",
+          "line_start": 131,
+          "line_end": 137,
+          "evidence_type": "implemented"
+        }
+      ]
+    }
+  ],
+  "business_steps": [
+    {
+      "id": "step.business.ftgo.account-registration-verification.register",
+      "business_flow": "business-flow.ftgo.ui.account-registration-verification",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.post.auth.register",
+      "http_method": "POST",
+      "path": "/auth/register",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SignUpComp.vue",
+      "symbol": "SignUpComp.signup",
+      "line_start": 113,
+      "line_end": 113
+    },
+    {
+      "id": "step.business.ftgo.account-registration-verification.verify",
+      "business_flow": "business-flow.ftgo.ui.account-registration-verification",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.post.auth.verify",
+      "http_method": "POST",
+      "path": "/auth/verify",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "route_navigation",
+        "vuex_dependency"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/VerifyAccountPage.vue",
+      "symbol": "VerifyAccountPage.verify",
+      "line_start": 75,
+      "line_end": 75
+    },
+    {
+      "id": "step.business.ftgo.customer-login-restaurant-browse.login",
+      "business_flow": "business-flow.ftgo.ui.customer-login-restaurant-browse",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.post.auth.login",
+      "http_method": "POST",
+      "path": "/auth/login",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86
+    },
+    {
+      "id": "step.business.ftgo.customer-login-restaurant-browse.get-all-restaurant-info",
+      "business_flow": "business-flow.ftgo.ui.customer-login-restaurant-browse",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info",
+      "http_method": "GET",
+      "path": "/restaurant/get_all_restaurant_info",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.fetchRestaurants",
+      "line_start": 86,
+      "line_end": 91
+    },
+    {
+      "id": "step.business.ftgo.driver-login-bootstrap.login",
+      "business_flow": "business-flow.ftgo.ui.driver-login-bootstrap",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.post.auth.login",
+      "http_method": "POST",
+      "path": "/auth/login",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86
+    },
+    {
+      "id": "step.business.ftgo.driver-login-bootstrap.get-info",
+      "business_flow": "business-flow.ftgo.ui.driver-login-bootstrap",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "http_method": "GET",
+      "path": "/vehicle/get_info",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreVehicleInfo",
+      "line_start": 157,
+      "line_end": 161
+    },
+    {
+      "id": "step.business.ftgo.driver-login-bootstrap.get",
+      "business_flow": "business-flow.ftgo.ui.driver-login-bootstrap",
+      "position": 3,
+      "user_flow": "flow.ftgo.gateway.get.status.get",
+      "http_method": "GET",
+      "path": "/status/get",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136
+    },
+    {
+      "id": "step.business.ftgo.restaurant-admin-login-bootstrap.login",
+      "business_flow": "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.post.auth.login",
+      "http_method": "POST",
+      "path": "/auth/login",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86
+    },
+    {
+      "id": "step.business.ftgo.restaurant-admin-login-bootstrap.get-supplier-restaurant-info",
+      "business_flow": "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "http_method": "GET",
+      "path": "/restaurant/get_supplier_restaurant_info",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreRestaurantInfo",
+      "line_start": 140,
+      "line_end": 144
+    },
+    {
+      "id": "step.business.ftgo.restaurant-admin-login-bootstrap.get-all-menu-item",
+      "business_flow": "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+      "position": 3,
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "http_method": "POST",
+      "path": "/menu/get_all_menu_item",
+      "trigger": "conditional",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "condition": [
+        "this.restaurant"
+      ],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137
+    },
+    {
+      "id": "step.business.ftgo.driver-vehicle-onboarding.register",
+      "business_flow": "business-flow.ftgo.ui.driver-vehicle-onboarding",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.post.vehicle.register",
+      "http_method": "POST",
+      "path": "/vehicle/register",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.registerVehicle",
+      "line_start": 84,
+      "line_end": 88
+    },
+    {
+      "id": "step.business.ftgo.driver-vehicle-onboarding.get-info",
+      "business_flow": "business-flow.ftgo.ui.driver-vehicle-onboarding",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.get.vehicle.get-info",
+      "http_method": "GET",
+      "path": "/vehicle/get_info",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.fetchAndStoreVehicleInfo",
+      "line_start": 111,
+      "line_end": 115
+    },
+    {
+      "id": "step.business.ftgo.driver-vehicle-onboarding.get",
+      "business_flow": "business-flow.ftgo.ui.driver-vehicle-onboarding",
+      "position": 3,
+      "user_flow": "flow.ftgo.gateway.get.status.get",
+      "http_method": "GET",
+      "path": "/status/get",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136
+    },
+    {
+      "id": "step.business.ftgo.driver-active-location-refresh.get",
+      "business_flow": "business-flow.ftgo.ui.driver-active-location-refresh",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.get.status.get",
+      "http_method": "GET",
+      "path": "/status/get",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "interval_loop",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": 5000,
+      "path_source": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136
+    },
+    {
+      "id": "step.business.ftgo.driver-active-location-refresh.submit",
+      "business_flow": "business-flow.ftgo.ui.driver-active-location-refresh",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.post.location.submit",
+      "http_method": "POST",
+      "path": "/location/submit",
+      "trigger": "conditional",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch",
+        "interval_loop"
+      ],
+      "condition": [
+        "this.isActive"
+      ],
+      "inherited_condition": [],
+      "loop_interval_ms": 5000,
+      "path_source": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.submitLocation",
+      "line_start": 177,
+      "line_end": 181
+    },
+    {
+      "id": "step.business.ftgo.restaurant-onboarding.register",
+      "business_flow": "business-flow.ftgo.ui.restaurant-onboarding",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.post.restaurant.register",
+      "http_method": "POST",
+      "path": "/restaurant/register",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.registerRestaurant",
+      "line_start": 135,
+      "line_end": 139
+    },
+    {
+      "id": "step.business.ftgo.restaurant-onboarding.get-supplier-restaurant-info",
+      "business_flow": "business-flow.ftgo.ui.restaurant-onboarding",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "http_method": "GET",
+      "path": "/restaurant/get_supplier_restaurant_info",
+      "trigger": "automatic",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.fetchAndStoreRestaurantInfo",
+      "line_start": 163,
+      "line_end": 167
+    },
+    {
+      "id": "step.business.ftgo.restaurant-onboarding.get-all-menu-item",
+      "business_flow": "business-flow.ftgo.ui.restaurant-onboarding",
+      "position": 3,
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "http_method": "POST",
+      "path": "/menu/get_all_menu_item",
+      "trigger": "conditional",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "condition": [
+        "this.restaurant"
+      ],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137
+    },
+    {
+      "id": "step.business.ftgo.restaurant-menu-add-refresh.add",
+      "business_flow": "business-flow.ftgo.ui.restaurant-menu-add-refresh",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.post.menu.add",
+      "http_method": "POST",
+      "path": "/menu/add",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.addFood",
+      "line_start": 148,
+      "line_end": 152
+    },
+    {
+      "id": "step.business.ftgo.restaurant-menu-add-refresh.get-all-menu-item",
+      "business_flow": "business-flow.ftgo.ui.restaurant-menu-add-refresh",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "http_method": "POST",
+      "path": "/menu/get_all_menu_item",
+      "trigger": "conditional",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "condition": [
+        "this.restaurant"
+      ],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137
+    },
+    {
+      "id": "step.business.ftgo.restaurant-menu-update-refresh.update",
+      "business_flow": "business-flow.ftgo.ui.restaurant-menu-update-refresh",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.put.menu.update",
+      "http_method": "PUT",
+      "path": "/menu/update",
+      "trigger": "user_action",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "condition": [],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.updateFood",
+      "line_start": 163,
+      "line_end": 167
+    },
+    {
+      "id": "step.business.ftgo.restaurant-menu-update-refresh.get-all-menu-item",
+      "business_flow": "business-flow.ftgo.ui.restaurant-menu-update-refresh",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "http_method": "POST",
+      "path": "/menu/get_all_menu_item",
+      "trigger": "conditional",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "condition": [
+        "this.restaurant"
+      ],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137
+    },
+    {
+      "id": "step.business.ftgo.restaurant-menu-delete-refresh.delete",
+      "business_flow": "business-flow.ftgo.ui.restaurant-menu-delete-refresh",
+      "position": 1,
+      "user_flow": "flow.ftgo.gateway.delete.menu.delete",
+      "http_method": "DELETE",
+      "path": "/menu/delete",
+      "trigger": "conditional",
+      "evidence_mechanism": [
+        "template_binding",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "condition": [
+        "confirm('آیا از حذف این محصول اطمینان دارید؟')"
+      ],
+      "inherited_condition": [],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.deleteItem",
+      "line_start": 189,
+      "line_end": 192
+    },
+    {
+      "id": "step.business.ftgo.restaurant-menu-delete-refresh.get-all-menu-item",
+      "business_flow": "business-flow.ftgo.ui.restaurant-menu-delete-refresh",
+      "position": 2,
+      "user_flow": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "http_method": "POST",
+      "path": "/menu/get_all_menu_item",
+      "trigger": "conditional",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "condition": [
+        "this.restaurant"
+      ],
+      "inherited_condition": [
+        "confirm('آیا از حذف این محصول اطمینان دارید؟')"
+      ],
+      "loop_interval_ms": null,
+      "path_source": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137
+    }
+  ],
+  "relationships": [
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.account-registration-verification",
+      "target": "step.business.ftgo.account-registration-verification.register",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignUpComp.vue",
+      "symbol": "SignUpComp.signup",
+      "line_start": 113,
+      "line_end": 113,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.account-registration-verification",
+      "target": "step.business.ftgo.account-registration-verification.verify",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/VerifyAccountPage.vue",
+      "symbol": "VerifyAccountPage.verify",
+      "line_start": 75,
+      "line_end": 75,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.customer-login-restaurant-browse",
+      "target": "step.business.ftgo.customer-login-restaurant-browse.get-all-restaurant-info",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.fetchRestaurants",
+      "line_start": 86,
+      "line_end": 91,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.customer-login-restaurant-browse",
+      "target": "step.business.ftgo.customer-login-restaurant-browse.login",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-active-location-refresh",
+      "target": "step.business.ftgo.driver-active-location-refresh.get",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-active-location-refresh",
+      "target": "step.business.ftgo.driver-active-location-refresh.submit",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.submitLocation",
+      "line_start": 177,
+      "line_end": 181,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-login-bootstrap",
+      "target": "step.business.ftgo.driver-login-bootstrap.get",
+      "position": 3,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-login-bootstrap",
+      "target": "step.business.ftgo.driver-login-bootstrap.get-info",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreVehicleInfo",
+      "line_start": 157,
+      "line_end": 161,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-login-bootstrap",
+      "target": "step.business.ftgo.driver-login-bootstrap.login",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-vehicle-onboarding",
+      "target": "step.business.ftgo.driver-vehicle-onboarding.get",
+      "position": 3,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-vehicle-onboarding",
+      "target": "step.business.ftgo.driver-vehicle-onboarding.get-info",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.fetchAndStoreVehicleInfo",
+      "line_start": 111,
+      "line_end": 115,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.driver-vehicle-onboarding",
+      "target": "step.business.ftgo.driver-vehicle-onboarding.register",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.registerVehicle",
+      "line_start": 84,
+      "line_end": 88,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+      "target": "step.business.ftgo.restaurant-admin-login-bootstrap.get-all-menu-item",
+      "position": 3,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+      "target": "step.business.ftgo.restaurant-admin-login-bootstrap.get-supplier-restaurant-info",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreRestaurantInfo",
+      "line_start": 140,
+      "line_end": 144,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+      "target": "step.business.ftgo.restaurant-admin-login-bootstrap.login",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-menu-add-refresh",
+      "target": "step.business.ftgo.restaurant-menu-add-refresh.add",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.addFood",
+      "line_start": 148,
+      "line_end": 152,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-menu-add-refresh",
+      "target": "step.business.ftgo.restaurant-menu-add-refresh.get-all-menu-item",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-menu-delete-refresh",
+      "target": "step.business.ftgo.restaurant-menu-delete-refresh.delete",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.deleteItem",
+      "line_start": 189,
+      "line_end": 192,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-menu-delete-refresh",
+      "target": "step.business.ftgo.restaurant-menu-delete-refresh.get-all-menu-item",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-menu-update-refresh",
+      "target": "step.business.ftgo.restaurant-menu-update-refresh.get-all-menu-item",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-menu-update-refresh",
+      "target": "step.business.ftgo.restaurant-menu-update-refresh.update",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.updateFood",
+      "line_start": 163,
+      "line_end": 167,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-onboarding",
+      "target": "step.business.ftgo.restaurant-onboarding.get-all-menu-item",
+      "position": 3,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-onboarding",
+      "target": "step.business.ftgo.restaurant-onboarding.get-supplier-restaurant-info",
+      "position": 2,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.fetchAndStoreRestaurantInfo",
+      "line_start": 163,
+      "line_end": 167,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "CONTAINS",
+      "source": "business-flow.ftgo.ui.restaurant-onboarding",
+      "target": "step.business.ftgo.restaurant-onboarding.register",
+      "position": 1,
+      "layer": "business",
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.registerRestaurant",
+      "line_start": 135,
+      "line_end": 139,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.account-registration-verification.register",
+      "target": "flow.ftgo.gateway.post.auth.register",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignUpComp.vue",
+      "symbol": "SignUpComp.signup",
+      "line_start": 113,
+      "line_end": 113,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.account-registration-verification.verify",
+      "target": "flow.ftgo.gateway.post.auth.verify",
+      "evidence_mechanism": [
+        "route_navigation",
+        "vuex_dependency"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/VerifyAccountPage.vue",
+      "symbol": "VerifyAccountPage.verify",
+      "line_start": 75,
+      "line_end": 75,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.customer-login-restaurant-browse.get-all-restaurant-info",
+      "target": "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.fetchRestaurants",
+      "line_start": 86,
+      "line_end": 91,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.customer-login-restaurant-browse.login",
+      "target": "flow.ftgo.gateway.post.auth.login",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-active-location-refresh.get",
+      "target": "flow.ftgo.gateway.get.status.get",
+      "evidence_mechanism": [
+        "interval_loop",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-active-location-refresh.submit",
+      "target": "flow.ftgo.gateway.post.location.submit",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch",
+        "interval_loop"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.submitLocation",
+      "line_start": 177,
+      "line_end": 181,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-login-bootstrap.get",
+      "target": "flow.ftgo.gateway.get.status.get",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-login-bootstrap.get-info",
+      "target": "flow.ftgo.gateway.get.vehicle.get-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreVehicleInfo",
+      "line_start": 157,
+      "line_end": 161,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-login-bootstrap.login",
+      "target": "flow.ftgo.gateway.post.auth.login",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-vehicle-onboarding.get",
+      "target": "flow.ftgo.gateway.get.status.get",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-vehicle-onboarding.get-info",
+      "target": "flow.ftgo.gateway.get.vehicle.get-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.fetchAndStoreVehicleInfo",
+      "line_start": 111,
+      "line_end": 115,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.driver-vehicle-onboarding.register",
+      "target": "flow.ftgo.gateway.post.vehicle.register",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.registerVehicle",
+      "line_start": 84,
+      "line_end": 88,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-admin-login-bootstrap.get-all-menu-item",
+      "target": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-admin-login-bootstrap.get-supplier-restaurant-info",
+      "target": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreRestaurantInfo",
+      "line_start": 140,
+      "line_end": 144,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-admin-login-bootstrap.login",
+      "target": "flow.ftgo.gateway.post.auth.login",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.signin",
+      "line_start": 86,
+      "line_end": 86,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-menu-add-refresh.add",
+      "target": "flow.ftgo.gateway.post.menu.add",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.addFood",
+      "line_start": 148,
+      "line_end": 152,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-menu-add-refresh.get-all-menu-item",
+      "target": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-menu-delete-refresh.delete",
+      "target": "flow.ftgo.gateway.delete.menu.delete",
+      "evidence_mechanism": [
+        "template_binding",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.deleteItem",
+      "line_start": 189,
+      "line_end": 192,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-menu-delete-refresh.get-all-menu-item",
+      "target": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-menu-update-refresh.get-all-menu-item",
+      "target": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-menu-update-refresh.update",
+      "target": "flow.ftgo.gateway.put.menu.update",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.updateFood",
+      "line_start": 163,
+      "line_end": 167,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-onboarding.get-all-menu-item",
+      "target": "flow.ftgo.gateway.post.menu.get-all-menu-item",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call",
+        "conditional_branch"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-onboarding.get-supplier-restaurant-info",
+      "target": "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.fetchAndStoreRestaurantInfo",
+      "line_start": 163,
+      "line_end": 167,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "DERIVED_FROM",
+      "source": "step.business.ftgo.restaurant-onboarding.register",
+      "target": "flow.ftgo.gateway.post.restaurant.register",
+      "evidence_mechanism": [
+        "template_binding"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.registerRestaurant",
+      "line_start": 135,
+      "line_end": 139,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.account-registration-verification.register",
+      "target": "step.business.ftgo.account-registration-verification.verify",
+      "evidence_mechanism": [
+        "route_navigation",
+        "vuex_dependency"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/VerifyAccountPage.vue",
+      "symbol": "VerifyAccountPage.verify",
+      "line_start": 75,
+      "line_end": 75,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.customer-login-restaurant-browse.login",
+      "target": "step.business.ftgo.customer-login-restaurant-browse.get-all-restaurant-info",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/CustomerMainPage.vue",
+      "symbol": "CustomerMainPage.fetchRestaurants",
+      "line_start": 86,
+      "line_end": 91,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.driver-active-location-refresh.get",
+      "target": "step.business.ftgo.driver-active-location-refresh.submit",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.submitLocation",
+      "line_start": 177,
+      "line_end": 181,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.driver-login-bootstrap.get-info",
+      "target": "step.business.ftgo.driver-login-bootstrap.get",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.driver-login-bootstrap.login",
+      "target": "step.business.ftgo.driver-login-bootstrap.get-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreVehicleInfo",
+      "line_start": 157,
+      "line_end": 161,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.driver-vehicle-onboarding.get-info",
+      "target": "step.business.ftgo.driver-vehicle-onboarding.get",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.fetchDriverOnlineStatus",
+      "line_start": 132,
+      "line_end": 136,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.driver-vehicle-onboarding.register",
+      "target": "step.business.ftgo.driver-vehicle-onboarding.get-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterVehiclePage.vue",
+      "symbol": "RegisterVehiclePage.fetchAndStoreVehicleInfo",
+      "line_start": 111,
+      "line_end": 115,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.restaurant-admin-login-bootstrap.get-supplier-restaurant-info",
+      "target": "step.business.ftgo.restaurant-admin-login-bootstrap.get-all-menu-item",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.restaurant-admin-login-bootstrap.login",
+      "target": "step.business.ftgo.restaurant-admin-login-bootstrap.get-supplier-restaurant-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SignInComp.vue",
+      "symbol": "SignInComp.fetchAndStoreRestaurantInfo",
+      "line_start": 140,
+      "line_end": 144,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.restaurant-menu-add-refresh.add",
+      "target": "step.business.ftgo.restaurant-menu-add-refresh.get-all-menu-item",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.restaurant-menu-delete-refresh.delete",
+      "target": "step.business.ftgo.restaurant-menu-delete-refresh.get-all-menu-item",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.restaurant-menu-update-refresh.update",
+      "target": "step.business.ftgo.restaurant-menu-update-refresh.get-all-menu-item",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.restaurant-onboarding.get-supplier-restaurant-info",
+      "target": "step.business.ftgo.restaurant-onboarding.get-all-menu-item",
+      "evidence_mechanism": [
+        "route_navigation",
+        "lifecycle_hook",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.fetchMenu",
+      "line_start": 131,
+      "line_end": 137,
+      "evidence_type": "implemented"
+    },
+    {
+      "type": "PRECEDES",
+      "source": "step.business.ftgo.restaurant-onboarding.register",
+      "target": "step.business.ftgo.restaurant-onboarding.get-supplier-restaurant-info",
+      "evidence_mechanism": [
+        "await_sequence",
+        "helper_call"
+      ],
+      "repository": "ftgo",
+      "commit": "52b1fd1b5d808e32b7925e890f560445a8460e7a",
+      "path": "ui/src/components/RegisterRestaurantPage.vue",
+      "symbol": "RegisterRestaurantPage.fetchAndStoreRestaurantInfo",
+      "line_start": 163,
+      "line_end": 167,
+      "evidence_type": "implemented"
+    }
+  ],
+  "relationship_counts": {
+    "CONTAINS": 24,
+    "DERIVED_FROM": 24,
+    "PRECEDES": 14
+  },
+  "resolved_business_flows": [
+    "business-flow.ftgo.ui.account-registration-verification",
+    "business-flow.ftgo.ui.customer-login-restaurant-browse",
+    "business-flow.ftgo.ui.driver-login-bootstrap",
+    "business-flow.ftgo.ui.restaurant-admin-login-bootstrap",
+    "business-flow.ftgo.ui.driver-vehicle-onboarding",
+    "business-flow.ftgo.ui.driver-active-location-refresh",
+    "business-flow.ftgo.ui.restaurant-onboarding",
+    "business-flow.ftgo.ui.restaurant-menu-add-refresh",
+    "business-flow.ftgo.ui.restaurant-menu-update-refresh",
+    "business-flow.ftgo.ui.restaurant-menu-delete-refresh"
+  ],
+  "partial_business_flows": [],
+  "rejected_business_flow_hypotheses": [
+    {
+      "id": "business-flow.ftgo.ui.customer-browse-menu-order-placement",
+      "title": "Customer restaurant browse, menu view and order placement",
+      "probe": "empty_destination_view",
+      "scope_note": "Selecting a restaurant navigates to the MenuPage route, whose view mounts nothing at this commit, so no menu retrieval or order creation is reachable through the router.",
+      "verified": true,
+      "evidence": [
+        "route 'MenuPage' -> ui/src/views/MenuPage.vue: view declares no script and no template"
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.customer-logout-login",
+      "title": "Customer logout followed by login",
+      "probe": "chain_below_minimum",
+      "scope_note": "Logout navigates to the sign-in page, but nothing on that page runs automatically and its login handler consumes no state the logout wrote, so a subsequent login is not proven.",
+      "verified": true,
+      "evidence": [
+        "ui/src/components/CustomerMainPage.vue#logout composes 1 distinct approved UserFlow(s)"
+      ],
+      "derived_user_flows": [
+        "flow.ftgo.gateway.post.profile.logout"
+      ],
+      "terminated_because": "route 'SignIn' offers only the user action 'signin', which consumes no state this journey wrote; arriving on the page does not prove a further request"
+    },
+    {
+      "id": "business-flow.ftgo.ui.driver-online-status-toggle",
+      "title": "Driver online and offline status toggle",
+      "probe": "chain_below_minimum",
+      "scope_note": "The toggle posts to /status/online or /status/offline, and Pass 5 approved no UserFlow for either, so only the status read remains and the journey falls below the two-flow minimum.",
+      "verified": true,
+      "evidence": [
+        "ui/src/components/DeliveryMainPage.vue#toggleActive composes 1 distinct approved UserFlow(s)"
+      ],
+      "derived_user_flows": [
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "terminated_because": null
+    },
+    {
+      "id": "business-flow.ftgo.ui.customer-profile-address-management",
+      "title": "Customer profile and address management",
+      "probe": "chain_below_minimum",
+      "scope_note": "The profile page loads user info and addresses from two unawaited calls in the same hook, so their relative order is not established by source.",
+      "verified": true,
+      "evidence": [
+        "ui/src/components/CustomerChangeInfo.vue#created composes 1 distinct approved UserFlow(s)"
+      ],
+      "derived_user_flows": [
+        "flow.ftgo.gateway.get.profile.user-info"
+      ],
+      "terminated_because": "no ordering evidence between flow.ftgo.gateway.get.profile.user-info and flow.ftgo.gateway.get.address.get-all-info: the preceding operation is neither awaited nor chained through a resolved promise"
+    },
+    {
+      "id": "business-flow.ftgo.ui.restaurant-vehicle-teardown",
+      "title": "Restaurant and vehicle teardown",
+      "probe": "disjoint_handlers",
+      "scope_note": "Restaurant deletion and vehicle deletion live in different components behind independent buttons with no call path between them, so no single journey orders them.",
+      "verified": true,
+      "evidence": [
+        "DELETE /restaurant/delete: ui/src/components/ChangeRestaurantInfo.vue",
+        "DELETE /vehicle/delete: ui/src/components/ChangeVehicleInfo.vue"
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.order-lifecycle-create-confirm-delivery",
+      "title": "Order creation, confirmation and delivery",
+      "probe": "absent_call_sites",
+      "scope_note": "No reachable component issues an order confirmation, rejection, update or history request, so the order lifecycle cannot be composed from the frontend at this commit.",
+      "verified": true,
+      "evidence": [
+        "POST /order/confirm: 0 frontend call sites",
+        "POST /order/reject: 0 frontend call sites",
+        "POST /order/update: 0 frontend call sites",
+        "POST /order/history: 0 frontend call sites"
+      ]
+    },
+    {
+      "id": "business-flow.ftgo.ui.feedback-rating-journey",
+      "title": "Delivery and order feedback rating",
+      "probe": "absent_call_sites",
+      "scope_note": "The frontend contains no feedback request at all; the Pass-5 feedback UserFlows exist only as gateway endpoints and a journey would have to be invented from their names.",
+      "verified": true,
+      "evidence": [
+        "POST /feedback/order/rating/create: 0 frontend call sites",
+        "POST /feedback/delivery/rating/create: 0 frontend call sites",
+        "GET /feedback/order/rating/get: 0 frontend call sites",
+        "GET /feedback/delivery/rating/get: 0 frontend call sites"
+      ]
+    }
+  ],
+  "unresolved_business_segments": [
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.setDriverOnlineStatus",
+      "line_start": 151,
+      "line_end": 155,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/status/offline",
+      "normalized_path": "/status/offline",
+      "user_flow": null,
+      "candidate_user_flows": [],
+      "reachable": true,
+      "reason": "no approved Pass-5 UserFlow declares POST /status/offline"
+    },
+    {
+      "path": "ui/src/components/DeliveryMainPage.vue",
+      "symbol": "DeliveryMainPage.setDriverOnlineStatus",
+      "line_start": 151,
+      "line_end": 155,
+      "http_method": "POST",
+      "request": "http://localhost:8000/api/v1/status/online",
+      "normalized_path": "/status/online",
+      "user_flow": null,
+      "candidate_user_flows": [],
+      "reachable": true,
+      "reason": "no approved Pass-5 UserFlow declares POST /status/online"
+    }
+  ],
+  "deferred_composable_segments": [
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.delete.address.delete",
+        "flow.ftgo.gateway.get.address.get-all-info"
+      ],
+      "entry_points": [
+        "ui/src/components/CustomerChangeInfo.vue#confirmDeleteAddress",
+        "ui/src/components/CustomerChangeInfo.vue#deleteAddress"
+      ],
+      "branch_selector": {},
+      "terminated_because": null,
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    },
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.delete.restaurant.delete",
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "entry_points": [
+        "ui/src/components/ChangeRestaurantInfo.vue#deleteAccount",
+        "ui/src/components/ChangeRestaurantInfo.vue#deleteRestaurant"
+      ],
+      "branch_selector": {},
+      "terminated_because": null,
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    },
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.delete.vehicle.delete",
+        "flow.ftgo.gateway.get.vehicle.get-info",
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "entry_points": [
+        "ui/src/components/ChangeVehicleInfo.vue#confirmDeleteVehicle",
+        "ui/src/components/ChangeVehicleInfo.vue#deleteVehicle"
+      ],
+      "branch_selector": {},
+      "terminated_because": "no ordering evidence between flow.ftgo.gateway.get.status.get and flow.ftgo.gateway.get.status.get: the preceding operation is neither awaited nor chained through a resolved promise",
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    },
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.post.address.add",
+        "flow.ftgo.gateway.get.address.get-all-info"
+      ],
+      "entry_points": [
+        "ui/src/components/CustomerChangeInfo.vue#addAddress"
+      ],
+      "branch_selector": {},
+      "terminated_because": null,
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    },
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.post.address.set-preferred",
+        "flow.ftgo.gateway.get.address.get-all-info"
+      ],
+      "entry_points": [
+        "ui/src/components/CustomerChangeInfo.vue#setPreferredAddress"
+      ],
+      "branch_selector": {},
+      "terminated_because": null,
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    },
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.put.profile.update",
+        "flow.ftgo.gateway.get.profile.user-info",
+        "flow.ftgo.gateway.get.restaurant.get-all-restaurant-info"
+      ],
+      "entry_points": [
+        "ui/src/components/CustomerChangeInfo.vue#updateUser"
+      ],
+      "branch_selector": {},
+      "terminated_because": null,
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    },
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.put.profile.update",
+        "flow.ftgo.gateway.get.profile.user-info",
+        "flow.ftgo.gateway.get.status.get"
+      ],
+      "entry_points": [
+        "ui/src/components/ChangeVehicleInfo.vue#updateUser"
+      ],
+      "branch_selector": {},
+      "terminated_because": "no ordering evidence between flow.ftgo.gateway.get.status.get and flow.ftgo.gateway.get.status.get: the preceding operation is neither awaited nor chained through a resolved promise",
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    },
+    {
+      "user_flows": [
+        "flow.ftgo.gateway.put.restaurant.update",
+        "flow.ftgo.gateway.get.restaurant.get-supplier-restaurant-info",
+        "flow.ftgo.gateway.post.menu.get-all-menu-item"
+      ],
+      "entry_points": [
+        "ui/src/components/ChangeRestaurantInfo.vue#updateRestaurant"
+      ],
+      "branch_selector": {},
+      "terminated_because": null,
+      "reason": "provable composition outside the declared Pass-6 journey catalog; deferred to a later reviewed pass rather than canonicalized here"
+    }
+  ],
+  "route_resolution_failures": [
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.deleteAccount",
+      "line": 224,
+      "target": "LandingPage",
+      "reason": "no route in the router table declares this path or name"
+    },
+    {
+      "path": "ui/src/components/ChangeRestaurantInfo.vue",
+      "symbol": "ChangeRestaurantInfo.navigateBack",
+      "line": 235,
+      "expression": "this.$router.go(-1)",
+      "reason": "this.$router.go has no statically resolvable destination"
+    },
+    {
+      "path": "ui/src/components/SupplierMainPage.vue",
+      "symbol": "SupplierMainPage.navigateToSupplierActiveOrders",
+      "line": 123,
+      "target": "SupplierActiveOrders",
+      "reason": "no route in the router table declares this path or name"
+    }
+  ],
+  "empty_destination_views": [
+    {
+      "route": "MenuPage",
+      "route_path": "/MenuPage",
+      "view": "ui/src/views/MenuPage.vue",
+      "reason": "view declares no script and no template"
+    }
+  ],
+  "unknown_routes": [
+    "LandingPage",
+    "SupplierActiveOrders"
+  ],
+  "identity_collisions": [],
+  "cycles_detected": [],
+  "warnings": [
+    "ui/src/components/MenuPage.vue: no routed view mounts this component, so nothing in it is reachable through the router",
+    "ui/src/views/MenuPage.vue: view declares no script and no template"
+  ],
+  "counts": {
+    "source_files_scanned": 28,
+    "routes_scanned": 12,
+    "views_scanned": 12,
+    "components_scanned": 12,
+    "api_call_sites": 39,
+    "api_calls_mapped": 38,
+    "api_calls_unresolved": 1,
+    "business_flows": 10,
+    "business_steps": 24,
+    "relationships": 62,
+    "resolved_business_flows": 10,
+    "partial_business_flows": 0,
+    "rejected_business_flow_hypotheses": 7,
+    "unresolved_business_segments": 2,
+    "deferred_composable_segments": 8,
+    "route_resolution_failures": 3,
+    "empty_destination_views": 1,
+    "unknown_routes": 2,
+    "identity_collisions": 0,
+    "cycles_detected": 0,
+    "warnings": 2
+  },
+  "modules_imported": 0,
+  "modules_executed": 0,
+  "runtime_connections_opened": 0,
+  "graph_mutations": 0,
+  "wiki_writes": 0,
+  "neo4j_mutations": 0,
+  "graphiti_mutations": 0,
+  "graphiti": "disabled"
+}

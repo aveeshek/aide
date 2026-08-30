@@ -19,6 +19,7 @@ entity_types:
   - Collection
   - Migration
   - UserFlow
+  - BusinessFlow
   - FlowStep
   - Requirement
   - AcceptanceCriterion

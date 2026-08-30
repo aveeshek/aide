@@ -25,11 +25,22 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
+from . import business_flow as _business_flow
 from . import compose as _compose
 from . import data_model as _data_model
 from . import fastapi as _fastapi
 from . import rabbitmq as _rabbitmq
 from . import user_flow as _user_flow
+from .business_flow import EXTRACTOR_KIND as BUSINESS_FLOW_KIND_ID
+from .business_flow import (
+    BusinessFlowCandidate,
+    BusinessFlowExtraction,
+    BusinessFlowHypothesis,
+    BusinessStepCandidate,
+    ChainWalker,
+    RejectionProbe,
+    extract_business_flow,
+)
 from .compose import EXTRACTOR_KIND as COMPOSE_KIND
 from .compose import (
     ComposeExtraction,
@@ -133,6 +144,13 @@ EXTRACTORS: dict[str, ExtractorSpec] = {
         candidate_subdirectories=_user_flow.CANDIDATE_SUBDIRECTORIES,
         sidecars=_user_flow.render_sidecars,
     ),
+    BUSINESS_FLOW_KIND_ID: ExtractorSpec(
+        kind=BUSINESS_FLOW_KIND_ID,
+        extract=extract_business_flow,
+        render_bundle=_business_flow.render_bundle,
+        summarize=_business_flow.summarize,
+        candidate_subdirectories=_business_flow.CANDIDATE_SUBDIRECTORIES,
+    ),
 }
 
 # Extractor kinds available to `python -m knowledge_plane.extract --kind ...`.
@@ -140,6 +158,7 @@ AVAILABLE_KINDS: tuple[str, ...] = tuple(EXTRACTORS)
 
 __all__ = [
     "AVAILABLE_KINDS",
+    "BUSINESS_FLOW_KIND_ID",
     "COMPOSE_KIND",
     "DATA_MODEL_KIND",
     "EXTRACTORS",
@@ -150,6 +169,11 @@ __all__ = [
     "ApiCandidate",
     "BrokerInteraction",
     "BrokerWrapper",
+    "BusinessFlowCandidate",
+    "BusinessFlowExtraction",
+    "BusinessFlowHypothesis",
+    "BusinessStepCandidate",
+    "ChainWalker",
     "CollectionCandidate",
     "ColumnCandidate",
     "ComposeExtraction",
@@ -167,6 +191,7 @@ __all__ = [
     "OntologyGap",
     "Provenance",
     "RabbitExtraction",
+    "RejectionProbe",
     "TableCandidate",
     "RelationshipCandidate",
     "SchemaCandidate",
@@ -177,6 +202,7 @@ __all__ = [
     "UnresolvedSchema",
     "UserFlowCandidate",
     "UserFlowExtraction",
+    "extract_business_flow",
     "extract_compose",
     "extract_data_model",
     "extract_fastapi",
